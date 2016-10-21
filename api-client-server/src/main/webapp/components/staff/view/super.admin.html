@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Super Admin</h1>
+
+<div ng-app="">
+    <p>Email: <input type="email" ng-model="email"></p>
+    <p>Type:
+        <select name="singleSelect" id="singleSelect" ng-model="type">
+            <option ng-repeat="types in typeUser">{{types}}</option>
+        </select>
+    </p>
+    <md-button class="md-raised md-primary" ng-click="sendToEmail(email,type)">
+        Send
+    </md-button>
+    <h3>{{successfullySend}}</h3>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<div class="md-nav-bar-div">
+    <md-content class="md-padding">
+
+
+        <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+            <md-nav-item md-nav-sref="app.staff.navBar.people" name="people">People <a ng-if="">({{}})</a> </md-nav-item>
+            <md-nav-item md-nav-sref="app.staff.navBar.departments" name="departments">Departments <a ng-if="">({{}})</a> </md-nav-item>
+            <md-nav-item md-nav-sref="app.staff.navBar.vacancy" name="vacancy">Vacancy <a ng-if="">({{}})</a> </md-nav-item>
+            <div class="divForIconLocationOnMd-nav-bar">
+                <ng-md-icon icon="device_hub" class="iconDevice-hub" size="30"></ng-md-icon>
+                <ng-md-icon icon="view_headline" class="iconView-headline" size="30"></ng-md-icon>
+            </div>
+        </md-nav-bar>
+    </md-content>
+</div>
+<ui-view></ui-view>

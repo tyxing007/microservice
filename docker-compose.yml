@@ -1,0 +1,101 @@
+version: '2'
+services:
+
+  mysql-resourse:
+    image: mysql
+    restart: always
+    environment:
+     MYSQL_ROOT_PASSWORD: 123456
+    ports:
+      - 3306:3306
+    volumes:
+      - /my/own/datadir/:/var/lib/mysql
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    restart: always
+    ports:
+      - 15672:15672
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+
+  config:
+    build: ./config/
+#    ports:
+#      - 8888:8888
+    restart: always
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+
+  eureka-server:
+    build: ./eureka-server/
+    restart: always
+    ports:
+      - 8761:8761
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+
+  api-client-server:
+    build: ./api-client-server/
+    restart: always
+    ports:
+      - 80:80
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+
+  auth-service:
+    build: ./auth-service/
+    restart: always
+    environment:
+      dbUrl: mysql-resourse
+#    ports:
+#      - 5000:5000
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+
+  monitoring:
+    build: ./monitoring/
+    restart: always
+    ports:
+      - 8080:8080
+      - 8989:8989
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+
+  tachometer-micro-service:
+    build: ./tachometerMicroService/
+    restart: always
+#    ports:
+#      - 3780:3780
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+
+  erp-server:
+      build: ./erp-server/
+      restart: always
+      environment:
+        dbUrl: mysql-resourse
+#      ports:
+#        - 8000:8000
+      logging:
+        options:
+          max-size: "10m"
+          max-file: "10"

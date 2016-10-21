@@ -1,0 +1,162 @@
+.md-content-for-people > .md-button-add{
+  float: left;
+  width: 9.5%;
+  margin-left: 1%;
+  margin-top: 1.4%;
+  background: gray;
+  color: white;
+  border: 1px solid;
+}
+
+.md-content-for-people .search-for-user-lists{
+  position: static;
+  margin-top: 130px;
+  width: auto;
+  margin-left: 160px;
+  background: transparent;
+}
+.search-for-user-lists *{
+  color: #cbcbcb;
+}
+
+.people-staff > .md-card-staff{
+  background: white;
+  float: left;
+  width: auto;
+  position: fixed;
+  height: 100%;
+  margin-top: -65px;
+}
+.md-card-staff *{
+  color: #808080;
+  padding: 6px 3px 6px 0px;
+  font-size: 16px;
+}
+.person-icon {
+  margin-top: -10px;
+  margin-left: 13px;
+}
+.md-button-in-md-card{
+  margin: 0 -6px 0 0;
+  text-align: left;
+}
+.status-employees > .height-for-span-text,
+.div-for-name-and-positions-employees > .height-for-span-text,
+.div-for-email-and-phone-employees > .height-for-span-text,
+.div-for-departments-and-works-employees > .height-for-span-text
+{
+  height: 28px;
+}
+
+.container-for-staff > .color-your-department{
+  margin-left: -19px;
+  width: 7px;
+  height: 107%;
+}
+.status-employees{
+  margin-top: 1.2%;
+  margin-left: 1%;
+}
+
+.img-avatar-employees{
+  flex: none;
+  width: 70px;
+  border-radius: 100%;
+  border: 2px solid #cbcbcb;
+}
+
+.div-for-avatar-employees{
+  margin-top: 0.8%;
+  margin-left: -12%;
+}
+
+.div-for-name-and-positions-employees {
+  margin-left: -10%;
+  margin-top: 1.2%;
+}
+
+.div-for-email-and-phone-employees{
+  margin-left: 5%;
+  margin-top: 1.2%;
+}
+
+.div-for-email-and-phone-employees span ng-md-icon {
+  margin-top: 5px;
+  padding-right: 5px;
+}
+
+.div-for-departments-and-works-employees{
+  margin-top: 1.5%;
+  margin-left: 10%;
+}
+
+.div-for-departments-and-works-employees span ng-md-icon{
+  padding-right: 10px;
+}
+
+.div-for-more-employees{
+  position: absolute;
+  right: 6px;
+  top: 30%;
+}
+
+.container-for-staff{
+  background: white;
+  margin-bottom: 0.5%;
+  height: 100px;
+  width: 99%;
+  margin-left: -0.5%;
+}
+
+.line-md-divider{
+
+}
+
+
+.md-padding{
+  padding: 0px;
+  overflow: hidden;
+}
+
+figure{
+  display: inline-block !important;
+}
+
+
+.iconView-headline{
+  position: absolute;
+  right: 50px;
+  top: 20%;
+  cursor: pointer;
+  color: #cbcbcb;
+}
+
+.iconDevice-hub{
+  position: absolute;
+  right: 100px;
+  top: 20%;
+  cursor: pointer;
+  color: #cbcbcb;
+
+}
+
+.md-nav-item{
+  width: auto;
+  height: 48px;
+  padding-right: 7px;
+  border-right: 0.5px solid #cbcbcb ;
+}
+@media screen and (max-width: 1260px) {
+
+  .div-for-avatar-employees{
+    margin-left: -8%;
+  }
+
+}
+
+@media screen and (max-width: 1100px) {
+  .md-nav-item{
+    width: 19%;
+  }
+}
+

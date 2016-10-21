@@ -1,0 +1,22 @@
+.popup-add-participant {
+  .header-for-modal-add-participant {
+    text-align: center;
+  }
+
+  .md-button-for-close-modal-add-participant {
+    position: absolute;
+    right: 0;
+    top: 15px;
+  }
+  .md-dialog-content-add-participant * {
+    color: black;
+  }
+
+  .md-dialog-content-add-participant {
+    width: 500px;
+  }
+  .select-in-modal-add-participant {
+    width: 50%;
+    margin-left: 10%;
+  }
+}

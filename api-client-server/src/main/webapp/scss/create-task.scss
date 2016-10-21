@@ -1,0 +1,68 @@
+.create-task md-toolbar{
+    position: static;
+}
+.create-task .md-toolbar-tools {
+    padding: 0px 15px 0px 15px;
+}
+.create-task .md-input {
+    border-color: rgba(0,0,0,0.12);
+}
+.create-task .md-datepicker-input-container{
+    margin-top: 33px;
+    width: 80%;
+}
+.create-task .md-chips:not(.md-readonly) {
+    max-width: 100%;
+    cursor: text;
+    margin: auto;
+}
+.create-task .ng-scope {
+    width: auto;
+}
+.create-task .select-project{
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 11px;
+  margin-bottom: 15px;
+}
+.create-task .select-prioritet{
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.create-task .md-avatar {
+    -ms-flex: none;
+    flex: none;
+    width: 40px;
+    height: 40px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-right: 16px;
+    border-radius: 50%;
+    box-sizing: content-box;
+}
+.create-task .select-issue{
+    width: auto;
+    height: auto;
+}
+.create-task .some-input{
+    color: rgba(0,0,0,0.38);
+}
+.create-task .member{
+    display: flex;
+}
+.create-task .add-member{
+    width: 100%;
+}
+.create-task .top-add-file{
+    background: transparent;
+    min-height: 18px !important
+}
+.crate-task .style-for-upload-and-remove-image{
+   cursor: pointer;
+   color: #333;
+   font-size: 15px;
+}
+
+.create-task .input-text-color{
+    color: rgba(0, 0, 0, 0.38);
+}

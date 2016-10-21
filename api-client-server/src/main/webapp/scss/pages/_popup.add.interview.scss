@@ -1,0 +1,66 @@
+.popup-add-interview {
+
+  .header-for-modal-add-interview {
+    text-align: center;
+  }
+
+  .md-button-for-close-modal-add-interview {
+    position: absolute;
+    right: 0;
+    top: 15px;
+  }
+
+  .md-dialog-content-add-interview {
+    width: 600px;
+
+    .div-for-first-row-in-add-interview div {
+      margin-left: 15px;
+
+        .md-input-container-responsible{
+          margin-top: -10px;
+          margin-left: 0px;
+      }
+    }
+
+    .div-for-second-row-in-add-interview div{
+      margin-left: 15px;
+    }
+
+    .md-chips-in-add-interviewer{
+      width: 100%;
+    }
+
+    .md-chip-template-img-for-chips-in-add-interviewer{
+      width: 31px;
+      float: left;
+      border-radius: 100px;
+    }
+
+    .md-chip-template-span-for-chips-in-add-interviewer{
+      margin-left: 10px;
+      float: left;
+    }
+
+    md-chips-wrap{
+      margin-left: 15px;
+      max-width: 100%;
+      margin-top: 10px;
+    }
+  }
+
+  .select-in-modal-add-interview {
+    width: 50%;
+    margin-left: 10%;
+  }
+}
+
+.md-item-template-img-for-chips-in-add-interviewer{
+  width: 40px;
+  margin-left: -10px;
+  border-radius: 100px;
+  margin-top: 4px;
+}
+.md-item-template-span-for-chips-in-add-interviewer{
+  margin-left: 10px;
+  position: absolute;
+}

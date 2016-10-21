@@ -1,0 +1,10 @@
+rootProject.name = 'CCRM'
+
+include 'eureka-server'
+include 'api-client-server'
+include 'erp-server'
+include 'tachometerMicroService'
+include 'config'
+include 'monitoring'
+include 'auth-service'
+

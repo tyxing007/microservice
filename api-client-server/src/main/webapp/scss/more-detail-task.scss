@@ -1,0 +1,68 @@
+.more-detail .md-toolbar-tools {
+    padding: 0px 15px 0px 15px;
+}
+.more-detail .md-input {
+    border-color: rgba(0,0,0,0.12);
+}
+.more-detail .md-datepicker-input-container{
+    margin-top: 33px;
+    width: 80%;
+}
+.more-detail .md-chips:not(.md-readonly) {
+    max-width: 100%;
+    cursor: text;
+    margin: auto;
+}
+.more-detail .ng-scope {
+    width: auto;
+}
+.more-detail .select-project{
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 11px;
+  margin-bottom: 15px;
+}
+.more-detail .select-prioritet{
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.more-detail .md-avatar {
+    -ms-flex: none;
+    flex: none;
+    width: 40px;
+    height: 40px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-right: 16px;
+    border-radius: 50%;
+    box-sizing: content-box;
+}
+.more-detail .select-issue{
+    width: auto;
+    height: auto;
+}
+.more-detail .head-more-detail{
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+.more-detail .header-task-project{
+    display: inline-flex;
+}
+.more-detail .member{
+    display: flex;
+}
+.more-detail .add-member{
+    width: 100%;
+}
+.more-detail .some-input{
+    color: rgba(0,0,0,0.38);
+}
+.more-detail .top-add-file{
+    background: transparent;
+    min-height: 18px !important
+}
+.more-detail .style-for-upload-and-remove-image{
+   cursor: pointer;
+   color: #333;
+   font-size: 15px;
+}

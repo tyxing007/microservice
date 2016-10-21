@@ -1,0 +1,171 @@
+.vacancy-staff > .md-list-for-staff{
+  margin-left: 20px;
+}
+.md-content-for-vacancy > .md-button-add{
+  float: left;
+  width: 9.5%;
+  margin-left: 1%;
+  margin-top: 1.4%;
+  background: gray;
+  color: white;
+  border: 1px solid;
+}
+
+.md-content-for-vacancy .search-for-user-lists{
+  position: static;
+  margin-top: 130px;
+  width: auto;
+  margin-left: 180px;
+  background: transparent;
+}
+.vacancy-staff > .md-card-staff{
+  background: white;
+  float: left;
+  width: auto;
+  position: fixed;
+  height: 100%;
+  margin-top: -65px;
+}
+._md-list-item-inner > .line-md-divider{
+ left: 0 ;
+  width: 100%;
+}
+.div-for-avatar-vacancy{
+  background: silver;
+  height: 100px;
+  margin-top: 0.2%;
+}
+.div-for-avatar-vacancy ng-md-icon{
+  margin-left: 27%;
+  margin-top: 7%;
+}
+.div-for-responsible-vacancy {
+  margin-top: 1.5%;
+}
+
+.container-for-staff md-input-container .md-input{
+  color: grey;
+  border: none;
+}
+.md-list-item-for-staff{
+  height: auto;
+  margin-bottom: 0.5%;
+  color: grey;
+  background: white;
+}
+.div-more-info-vacancy{
+  width: 99%;
+  margin-left: 0.2%;
+  max-height: 0px;
+  transition: 0.2s max-height 0s;
+}
+.div-more-info-vacancy-active{
+  border: 1px solid #CBCBCB;
+  width: 99.8%;
+  background: white;
+  margin-left: 0.2%;
+  max-height: 700px;
+  transition: 1s max-height 0s;
+}
+.div-more-info-vacancy-active *{
+  color: grey;
+}
+.div-more-info-vacancy *{
+  color: grey;
+}
+.div-more-info-vacancy md-pagination-wrapper{
+  width: 100% !important;
+}
+.div-more-info-vacancy md-tab-item, md-ink-bar{
+  width: 50%;
+}
+.div-more-info-vacancy-active md-pagination-wrapper{
+  width: 100% !important;
+}
+.div-more-info-vacancy-active md-tab-item, md-ink-bar{
+  width: 50%;
+}
+
+.md-button.md-icon-button.div-for-more-vacancy{
+  margin-top: 65% ;
+  right: 6px;
+  top: 30%;
+}
+.div-for-information-in-vacancy{
+  padding: 10px 11px 20px 20px;
+}
+
+.div-for-candidates-in-vacation-header{
+  border-bottom: 1px solid #CBCBCB;
+  padding-left: 15px;
+}
+.div-for-candidates-in-vacation-table{
+  position: absolute;
+  top: 0;
+}
+.div-for-candidates-in-vacation-header a{
+  margin-top: 5px;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.div-for-candidates-in-vacation a{
+  margin-top: 5px;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.div-for-candidates-in-vacation{
+  margin-top: 1.2%;
+  padding-left: 15px;
+  cursor: pointer;
+}
+.div-flex-name-vacancy{
+  margin-top: 1.8%;
+  margin-left: 1%;
+}
+.div-for-interview-and-total-members{
+  margin-left: 5%;
+  margin-top: 2.8%;
+}
+.div-for-add-flex-vacancy{
+  margin-top: 1.8%;
+  margin-left: 10%;
+}
+.div-for-edit-vacancy{
+  margin-top: 2.9%;
+}
+.list-candidates-in-vacancy{
+  border-bottom: 1px solid #cbcbcb;
+  height: 70px;
+}
+.mark-for-step{
+  margin-left: 105px;
+  position: absolute;
+  margin-top: -20px;
+  a{
+    font-size: 2vw;
+    margin-left: 10px;
+  }
+}
+.file-for-step{
+  margin-left: 105px;
+  position: absolute;
+  margin-top: -25px;
+}
+.div-total-score-for-step{
+  a{
+    font-size: 2vw;
+  }
+  margin-left: 15px;
+}
+
+.md-list-item-for-staff>md-divider.line-md-divider{
+  left: 0;
+  width: 100%;
+}
+.md-dialog-container .popup-if-not-all-interviewers-rated-candidate{
+  background: white;
+  padding: 30px;
+  h1{
+    background: transparent;
+  }
+}

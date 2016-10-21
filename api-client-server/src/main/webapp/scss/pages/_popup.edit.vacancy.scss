@@ -1,0 +1,57 @@
+.popup-edit-vacancy {
+  .md-dialog-content-edit-vacancy * {
+    color: black;
+  }
+
+  .md-dialog-content-edit-vacancy {
+    width: 500px;
+  }
+
+  .header-for-modal-edit-vacancy {
+    text-align: center;
+
+  }
+
+  .md-button-for-close-modal-edit-vacancy {
+    position: absolute;
+    right: 0;
+    top: 15px;
+  }
+
+  .main-div-for-edit-vacancy {
+    padding: 1% 10% 0 10%;
+    * {
+
+    }
+    p {
+      margin-top: 25px;
+    }
+    input {
+      width: 100%;
+    }
+
+    .text-area-in-modal-edit-vacancy {
+      width: 100%;
+      height: 70px;
+    }
+    .select-in-modal-edit-vacancy {
+      width: 50%;
+
+    }
+    .md-checkbox-for-edit-vacancy {
+      margin-left: 29%;
+      float: right;
+      margin-right: 8%;
+      margin-top: -12%;
+
+    }
+    .md-input-container-responsible {
+      width: 100%;
+      margin: 0;
+    }
+    .md-chips-step md-chips-wrap {
+      max-width: 100%;
+      margin-top: -10px;
+    }
+  }
+}

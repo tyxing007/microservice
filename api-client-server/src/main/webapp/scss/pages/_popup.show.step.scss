@@ -1,0 +1,63 @@
+.popup-show-step{
+  width: 35%;
+  .header-for-modal-create-vacancy{
+    text-align: left;
+    padding-left: 20px;
+    p {
+      font-weight: bold;
+    }
+    p a{
+      color: #C2C2C2;
+    }
+    ng-md-icon{
+      margin-right: 10px;
+    }
+  }
+  .md-dialog-content-create-vacancy{
+    .first-row-in-md-dialog-content-create-vacancy{
+      height: 55px;
+    }
+    .second-row-in-md-dialog-content-create-vacancy{
+      margin-left: 25px;
+      height: 35px;
+      p{
+        color: #C2C2C2;
+      }
+    }
+    .list-participant-in-show-step{
+      margin-left: 25px;
+      margin-bottom: 5px;
+      margin-top: 5px;
+      .mark-in-list-participant-in-show-step{
+        font-size: 30px;
+        text-align: center;
+        a{
+          font-size: 15px;
+          color: #C2C2C2;
+          margin-bottom: 5px;
+        }
+      }
+      .comment-in-list-participant-in-show-step{
+        font-size: 15px;
+        color: #A7A7A7;
+        padding: 4px 0px 2px 7px;
+      }
+    }
+    md-input-container{
+      margin-left: 20px;
+    }
+    md-input-container label{
+      color: #C2C2C2;
+    }
+    md-input-container input{
+      border: none;
+      color: black;
+    }
+    .date-time-for-show-step{
+      font-size: 18px;
+      text-align: center;
+      margin-top: 10px;
+    }
+  }
+
+}

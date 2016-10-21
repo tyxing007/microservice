@@ -1,0 +1,120 @@
+
+.main-content-for-user-edit > .md-edit-profile{
+  position: static;
+  margin-top: 80px;
+  width: 100%;
+}
+.user-settings > .md-card-user-create{
+  width: 100%;
+}
+
+
+.main-content-for-user-edit{
+  position: absolute;
+  left: 35%;
+}
+.style-for-upload-and-remove-image{
+  cursor: pointer;
+  color: #333;
+  font-size: 15px;
+}
+
+.settings-form > .input-for-departments-and-position{
+  color: #808080;
+  border: none;
+}
+.md-chips:not(.md-readonly) {
+  max-width: 265px;
+  cursor: text;
+  margin: auto;
+}
+
+.save-btn {
+  padding: 0px 0px;
+}
+
+.info-02 {
+  width: 100%;
+  margin: 0 auto;
+}
+[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate) {
+  display: block !important;
+}
+
+.md-virtual-repeat-container.ng-hide:not(.ng-hide-animate){
+  display: none !important;
+}
+
+.md-datepicker-expand-triangle{
+  width: 0px !important;
+}
+
+.settings-form md-datepicker{
+  margin-left: 11%;
+}
+
+md-grid-list {
+  margin: 0px 0px 110px 0px;
+}
+
+@media screen and (max-width: 1100px) {
+  md-content .main-content-for-user-edit{
+    margin-left: 30%;
+    width: 45%;
+  }
+
+  md-grid-list {
+    margin: 0px 0px -164px 0px;
+  }
+
+}
+
+.user-settings {
+  width: 98%;
+  margin-left: -1%;
+}
+
+.title-sett {
+  color: $usermain;
+  margin: 27px 50px;
+  display: block;
+}
+
+.settings-form input {
+  color: #808080;
+}
+
+.settings-form label {
+  color: #808080;
+}
+
+.input-width {
+  width: 90%!important;
+}
+
+.md-datepicker-button > .md-datepicker-calendar-icon {
+  color: #e5e5e5;
+}
+
+.cancel a {
+  color: $cancel;
+  &:hover {
+    color: $cancel;
+  }
+}
+
+.header-title {
+  padding-left: 30px;
+  p {
+    font-size: 16pt;
+    font-family: Lato,sans-serif;
+    color: $usermain;
+  }
+  a {
+    color: $cancel;
+    padding-right: 15px;
+  }
+  a:hover {
+    color: $cancel;
+  }
+}

@@ -1,0 +1,25 @@
+#version: '2'
+#services:
+#  config:
+#    build: config
+#    ports:
+#      - 8888:8888
+#
+#  eureka-server:
+#    build: eureka-server
+#
+#  api-client-server:
+#    build: api-client-server
+#
+#  auth-service:
+#    build: auth-service
+#    ports:
+#      - 5000:5000
+#
+#  erp-server:
+#    build: erp-server
+#    ports:
+#      - 8000:8000
+#
+#  monitoring:
+#    build: monitoring

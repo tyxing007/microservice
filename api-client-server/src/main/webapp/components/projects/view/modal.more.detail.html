@@ -1,0 +1,127 @@
+<md-dialog class="more-detail" aria-label="Create request"  ng-cloak>
+    <form>
+        <md-toolbar>
+            <div layout="row" class="md-toolbar-tools">
+                <div class="header-task-project" flex="100"><h2>DEN-11&nbsp;</h2> / Dengo Service</div>
+                <span flex></span>
+                <md-menu md-offset="0 -7">
+                    <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                        <ng-md-icon icon="more_vert" class="menu-more" size="28"></ng-md-icon>
+                    </md-button>
+                    <md-menu-content width="4">
+                        <md-menu-item ng-repeat="item in [1, 2, 3]">
+                            <md-button> <span md-menu-align-target>Option</span> {{item}} </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <ng-md-icon icon="clear" size="28"></ng-md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <h3 class="head-more-detail">Розробка Front-end частини на Angular</h3>
+
+                <div layout-gt-xs="row">
+                    <md-input-container class="md-block select-project"  flex-gt-sm="50">
+                        <label>Status</label>
+                        <md-select ng-model="request.requestPriotitet">
+                            <md-option ng-repeat="requestPriotitet in requestPriotitets" value="{{requestPriotitet.requests}}">
+                                {{requestPriotitet.requests}}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+
+                    <md-input-container class="md-block select-project"  flex-gt-sm="50">
+                        <label>Prioritet</label>
+                        <md-select ng-model="request.requestPriotitet">
+                            <md-option ng-repeat="requestPriotitet in requestPriotitets" value="{{requestPriotitet.requests}}">
+                                {{requestPriotitet.requests}}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+
+                <div layout-gt-xs="row">
+                    <md-chips flex-gt-sm="100" ng-model="moreDetail.selectedVegetables" md-autocomplete-snap="" md-transform-chip="moreDetail.transformChip($chip)" md-require-match="moreDetail.autocompleteDemoRequireMatch">
+                        <md-autocomplete md-selected-item="moreDetail.selectedItem" md-search-text="moreDetail.searchText" md-items="item in moreDetail.querySearch(moreDetail.searchText)" md-item-text="item.name" placeholder="Labels">
+                            <span md-highlight-text="moreDetail.searchText">{{item.name}} :: {{item.type}}</span>
+                            <md-not-found>
+                                <div class="chip-not-found" ng-click="moreDetail.notFound(moreDetail.searchText)">Not found. Click here to add new.</div>
+                            </md-not-found>
+                        </md-autocomplete>
+                        <md-chip-template>
+                        <span>
+                          <strong>{{$chip.name}}</strong>
+                          <em>({{$chip.type}})</em>
+                        </span>
+                        </md-chip-template>
+                    </md-chips>
+                </div>
+                <h3>Members</h3>
+                <p>Executant</p>
+                <div layout-gt-xs="row">
+                    <div flex-gt-sm="25" class="member">
+                        <img ng-src="https://material.angularjs.org/latest/img/list/60.jpeg" class="md-avatar" alt="Dima Sheremet">
+                        <p>Dmitry Sheremet</p>
+                    </div>
+                    <div flex-gt-sm="25" class="member">
+                        <img ng-src="https://material.angularjs.org/latest/img/list/60.jpeg" class="md-avatar" alt="Dima Sheremet">
+                        <p>Dmitry Sheremet</p>
+                    </div>
+                    <div flex-gt-sm="25" class="member">
+                        <img ng-src="https://material.angularjs.org/latest/img/list/60.jpeg" class="md-avatar" alt="Dima Sheremet">
+                        <p>Dmitry Sheremet</p>
+                    </div>
+                    <div flex-gt-sm="10" class="member">
+                        <md-button class="md-icon-button select-issue" class="add-member">
+                            <ng-md-icon icon="add_circle_outline" size="28"></ng-md-icon>
+                        </md-button>
+                    </div>
+                </div>
+                <h3>Dates</h3>
+                <div layout-gt-xs="row">
+                    <div flex-gt-sm="50" class="member">
+                        <md-input-container class="md-block select-prioritet" flex-gt-xs>
+                            <label>Date of creation</label>
+                            <input ng-model="task.createDate" disabled>
+                        </md-input-container>
+                    </div>
+                    <md-datepicker ng-model="request.submissionDate" md-placeholder="Due date" flex-gt-sm="50"></md-datepicker>
+                </div>
+                <md-input-container class="md-block select-project" flex-gt-sm="100">
+                    <label class="some-input">Description</label>
+                    <input ng-model="request.description">
+                </md-input-container>
+                <md-input-container class="md-block select-project" flex-gt-sm="100">
+                    <label class="some-input">Comments</label>
+                    <input ng-model="request.theme">
+                </md-input-container>
+                <md-toolbar ngf-select
+                            class="top-add-file"
+                            ng-model="file"
+                            ngf-multiple="false"
+                            ngf-allow-dir="false"
+                            accept="image/jpeg png jpg">
+                    <a class="style-for-upload-and-remove-image"
+                       onclick="if(document.getElementById('photoFromDb'))
+                       document.getElementById('photoFromDb').remove()">+ Add a file</a>
+                </md-toolbar>
+                <h3>Activity</h3>
+                <div layout-gt-xs="row">
+                    <img ng-src="https://material.angularjs.org/latest/img/list/60.jpeg" class="md-avatar" alt="Dima Sheremet" flex-gt-sm="10">
+                    <div flex-gt-sm="90">
+                        <p><strong>Dimitry Sheremet</strong> moved this card from "To implement" to "In progres".<small>06/07 at 10:38 AM</small></p>
+                    </div>
+                </div>
+                <div layout-gt-xs="row">
+                    <img ng-src="https://material.angularjs.org/latest/img/list/60.jpeg" class="md-avatar" alt="Dima Sheremet" flex-gt-sm="10">
+                    <div flex-gt-sm="90">
+                        <p><strong>Julia Koval</strong> created this card.<small>04/07 at 10:38 AM</small></p>
+                    </div>
+                </div>
+            </div>
+        </md-dialog-content>
+    </form>
+</md-dialog>

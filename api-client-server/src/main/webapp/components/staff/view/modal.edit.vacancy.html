@@ -1,0 +1,55 @@
+<md-dialog class="popup-edit-vacancy">
+    <div class="header-for-modal-edit-vacancy">
+        <h2>Edit Vacancy</h2>
+        <md-button class="md-icon-button md-button-for-close-modal-edit-vacancy" ng-click="cancel()">
+            <ng-md-icon icon="close"
+                        size="18"
+                        aria-label="Close dialog">
+            </ng-md-icon>
+        </md-button>
+    </div>
+    <md-dialog-content class="md-dialog-content-edit-vacancy">
+        <form name="vacancyForm">
+            <div class="main-div-for-edit-vacancy">
+                <p>Current Position</p>
+                <input required ng-model="newVacancy.name" type="text" placeholder="Write a position">
+                <p>Status</p>
+                <md-select placeholder="Select type" class="select-in-modal-edit-vacancy" ng-model="newVacancy.type">
+                    <md-option ng-repeat="types in typeVacancy" style="background: white">{{types}}</md-option>
+                </md-select>
+                <md-checkbox ng-model="newVacancy.hotVacancy" class="md-checkbox-for-edit-vacancy">
+                    Make hot job
+                </md-checkbox>
+                <p>Responsible</p>
+                <md-input-container  class="md-input-container-responsible">
+                    <md-select ng-model="newVacancy.responsible"
+                               md-on-open="getAutocompleteData('responsible')"
+                               placeholder="{{newVacancy.responsible.name}} {{newVacancy.responsible.lastName}}" >
+                        <md-option ng-value="responsible" ng-repeat="responsible in $root.autocomplete.responsible | filter:{ type : '!CANDIDATE'}">
+                            {{responsible.name}} {{responsible.lastName}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+                <p></p>
+                <p>Information about vacancy</p>
+                <p>Duties and responsible</p>
+                <textarea class="text-area-in-modal-edit-vacancy" ng-model="newVacancy.dutiesAndResponsible"
+                          placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consequuntur culpa eaque eveniet, fuga illum odio pariatur sit soluta vitae."></textarea>
+                <p>Required skills</p>
+                <input ng-model="newVacancy.requiredSkills" type="text" placeholder="Write a text">
+                <p>Will by a plus</p>
+                <input ng-model="newVacancy.willByAPlus" type="text" placeholder="Write a text">
+                <p>Offer</p>
+                <input ng-model="newVacancy.offer" type="text" placeholder="Write a text">
+            </div>
+        </form>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+        <md-button ng-click="cancel()">
+            Close
+        </md-button>
+        <md-button ng-click="saveVacancy()" ng-disabled="vacancyForm.$pristine" style="margin-right:20px;" >
+            Save
+        </md-button>
+    </md-dialog-actions>
+</md-dialog>

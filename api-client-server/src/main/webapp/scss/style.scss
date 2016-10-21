@@ -1,0 +1,254 @@
+@import "projects";
+@import "color";
+@import "font";
+@import "mixin";
+@import "pages/_header";
+@import "pages/_nav.bar.staff";
+@import "pages/_people.staff";
+@import "pages/_user.create";
+@import "pages/_vacancy.staff";
+@import "pages/_user.settings";
+@import "pages/_popup.create.vacancy";
+@import "pages/_popup.edit.vacancy";
+@import "pages/_popup.show.step";
+@import "pages/_popup.add.participant";
+@import "pages/_popup.add.interview";
+
+.content {
+  background-color: $content;
+}
+
+ md-grid-list {
+  margin: 8px;
+ }
+
+ .md-icon-float > .search {
+  top:0px;
+   left: -25px;
+}
+
+ .white {
+   color: black;
+ }
+
+md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar) {
+  background-color: #cbcbcb;
+  color: rgba(255,255,255,0.87);
+}
+.cross {
+  color: $cross;
+  cursor: pointer;
+  height: 50px!important;
+  width: 50px!important;
+}
+md-list-item, md-list-item ._md-list-item-inner {
+  min-height: 60px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+
+
+md-toolbar {
+  justify-content: space-between;
+}
+.settings {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}
+
+md-list-item > ng-md-icon:first-child, md-list-item .md-list-item-inner > ng-md-icon:first-child
+{  margin: auto;
+}
+.nav-text {
+  margin-top: 6px;
+}
+
+md-list-item ._md-no-style, md-list-item._md-no-proxy {
+  margin: 0;
+}
+._md-select-menu-container{
+  background: white;
+}
+md-input-container > ng-md-icon {
+  position: absolute;
+  top: 2px;
+  left: -28px;
+}
+
+.sett {
+  top: 0px!important;
+  left: 0px!important;
+  color: #e5e5e5;
+}
+md-input-container {
+  margin: 27px 50px;
+}
+md-input-container .md-errors-spacer {
+  display: none;
+}
+md-input-container.md-default-theme .md-input, md-input-container .md-input {
+  border-color: transparent;
+}
+md-input-container.md-default-theme label, md-input-container label, md-input-container.md-default-theme ._md-placeholder, md-input-container ._md-placeholder {
+  color: $white;
+  font-family: LatoRegular;
+  font-size: 15pt;
+}
+
+
+md-toolbar {
+  position: fixed;
+  width: 100%;
+}
+.add-widget {
+  display: table;
+  margin: auto;
+  padding: 30px 0px;
+  a {
+    color: $text;
+    font-family: Lato, sans-serif;
+    text-decoration: none;
+    &:hover {
+      color: $navigation;
+    }
+  }
+}
+md-list {
+  display: block;
+  padding: 0px;
+}
+
+.timer {
+  align-self: center;
+  padding-left: 15px;
+  font-family: LatoSemibold;
+  font-size: 16px;
+
+}
+
+.md-sidenav-right {
+  top: 76px;
+}
+.md-sidenav-right {
+  background-color: $text;
+}
+
+.layout-row > md-content {
+  background: transparent;
+  font-family: Lato;
+  color: $white;
+  display: inline;
+  position: static;
+}
+md-content._md{
+  //overflow-x: hidden;
+}
+md-select-menu{
+  background: rgb(255,255,255);
+}
+md-content{
+overflow: inherit;
+}
+.md-button {
+  color : $menu;
+}
+
+.layout-padding, .layout-padding-gt-sm, .layout-padding-gt-sm>*,
+.layout-padding-md, .layout-padding-md>*, .layout-padding>*,
+.layout-padding>.flex, .layout-padding>.flex-gt-sm, .layout-padding>.flex-md {
+  padding: 0px;
+}
+
+@media screen and (max-height: 900px) {
+  .settings {
+    position: static;
+  }
+}
+@media screen and (max-width: 1900px) {
+  .flex-5, .layout-row>.flex-5 {
+    max-width: 95px;
+  }
+  .content {
+    margin-left: 90px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .flex-5, .layout-row > .flex-5 {
+    max-width: 75px;
+  }
+
+  .layout-row > .content {
+    margin-left: 75px;
+  }
+
+  .nav-text {
+    font-size: 12px;
+  }
+  ._md-no-proxy {
+    padding: 0px !important;
+  }
+  .title {
+    font-size: 12px;
+  }
+}
+
+md-toolbar.md-toolbar-in-user-show{
+  position: relative;
+  margin-top: 100px;
+}
+
+._md-secondary-container {
+  display: none!important;
+}
+
+.logout {
+  color: #f1f1f1!important;
+}
+
+.content {
+  margin-left: 90px;
+}
+md-sidenav._md-locked-open, md-sidenav._md-locked-open-add,
+md-sidenav._md-locked-open-remove, md-sidenav._md-locked-open-remove._md-closed,
+md-sidenav._md-locked-open._md-closed, md-sidenav._md-locked-open._md-closed.md-sidenav-left,
+md-sidenav._md-locked-open._md-closed.md-sidenav-right
+{
+  position: fixed;
+}
+
+@media screen and (max-width: 435px) {
+  .layout-row > .content {
+    margin-left: 110px;
+  }
+}
+
+@media screen and (max-width: 412px) {
+  .layout-row > .content {
+    margin-left: 94px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .layout-row >  .content {
+    margin-left: 88px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .layout-row > .content {
+    margin-left: 70px;
+  }
+}
+
+
+md-backdrop.md-opaque.md-default-theme, md-backdrop.md-opaque {
+  background-color: transparent;
+}
+.layout-padding, .layout-padding-gt-sm, .layout-padding-gt-sm>*, .layout-padding-md, .layout-padding-md>*, .layout-padding>*, .layout-padding>.flex, .layout-padding>.flex-gt-sm, .layout-padding>.flex-md {
+  padding: 0px;
+  background-color: #cbcbcb;
+}

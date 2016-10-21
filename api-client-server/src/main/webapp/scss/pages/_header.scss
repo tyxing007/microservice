@@ -1,0 +1,126 @@
+.nav-all {
+  padding: 8px 16px;
+
+  &:hover {
+    background-color: $menu;
+    cursor: pointer;
+    color: $white;
+  }
+
+}
+
+.nav-all {
+  min-height: 64px;
+}
+
+md-grid-tile {
+  transition: all 400ms ease-out 50ms; }
+.nav {
+  background-color: $navigation;
+  width: 90px;
+  color: $text;
+  font-family: Lato, sans-serif;
+  .md-button {
+    text-transform: capitalize;
+    line-height: 28px;
+  }
+}
+
+md-input-container.md-icon-float > ng-md-icon {
+  color: $cross;
+}
+
+
+.nav-text-right {
+  padding: 0px;
+  color: #fff;
+  line-height: 55px;
+  font-family: Lato, sans-serif;
+
+  &:hover {
+    background-color: $menu;
+    cursor: pointer;
+    color: $white;
+  }
+}
+.title {
+
+  color: $white;
+  display: block;
+  text-transform: uppercase;
+  padding: 15px 0 0 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+.title-text {
+  color: $white;
+  font-size: 13px;
+  padding: 0px;
+  text-transform: lowercase;
+}
+.user {
+  @include flexbox();
+  margin: auto 50px;
+  img {
+
+    cursor: pointer;
+  }
+}
+.user > img {
+  outline: none;
+}
+
+.notification-title {
+  font-family: LatoRegular, sans-serif;
+  font-size: 13pt;
+  margin: auto;
+  display: table;
+  margin-top: 15px;
+}
+.notification-block {
+  background-color: $white;
+  height: 90px;
+  margin: 5px auto;
+  line-height: 90px;
+  text-align: center;
+  color: #bdc5ca;
+  width: 90%;
+  position: relative;
+}
+
+.clear {
+  position: absolute;
+  right: 2px;
+  cursor: pointer;
+  top: 2px;
+}
+
+@media screen and (max-height: 900px) {
+  md-list > .nav-all {
+    padding: 0px;
+  }
+  .nav-text-right {
+    line-height: 25px;
+  }
+
+  .nav-text-right {
+    min-height: 34px;
+  }
+}
+
+@media screen and (max-width: 456px) {
+  .md-toolbar-tools > .md-2--tool {
+    font-size: 13px;
+    padding-right: 5px;
+  }
+  .layout-row > md-sidenav {
+    width: calc(40% - 56px);
+    min-width: calc(40% - 56px);
+  }
+  .user {
+    margin: auto;
+  }
+}
+.notification-title {
+  color: #fff;
+}
