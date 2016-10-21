@@ -5,3 +5,4 @@ gradle
 erp-server/resources/
 api-client-server/node_modules
 resources/
+api-client-server/src/main/resources/static/source
