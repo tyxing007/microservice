@@ -3,6 +3,6 @@ build
 gradle
 .gradle/
 erp-server/resources/
-api-client-server/node_modules
-resources/
-api-client-server/src/main/resources/static/source
+api-client-server/node_modules/
+api-client-server/src/main/resources/static/source/
+auth-service/src/main/resources/static/source/

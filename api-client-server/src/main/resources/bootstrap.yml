@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: api-client-server
+  cloud:
+    config:
+      uri: http://config:8888
+      fail-fast: true
+      password: c123456
+      username: user
