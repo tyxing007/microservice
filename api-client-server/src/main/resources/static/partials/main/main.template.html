@@ -1,0 +1,19 @@
+<div class="container">
+
+
+    <hr>
+    <!--<form action="user/login" id="auth" method="post" autocomplete="off">-->
+        <input id="frontloginform" name="username" type="text" ng-model="user.username">
+        <input id="frontpasswordform" name="password" type="password" ng-model="user.password">
+
+        <input type="button" ng-click="logout()" value="Log Out">
+        <input type="button" ng-click="login()" value="Log In OAuth2">
+
+    <!--</form>-->
+    <input type="button" ng-click="getPrincipal()" value="Get Principal from uaa">
+    <input type="button" ng-click="getPrincipal2()" value="Get Principal from tachometer">
+    <input type="button" ng-click="getPrincipal3()" value="Get Principal from uaa through tachometer">
+
+    <ui-view></ui-view>
+
+</div>

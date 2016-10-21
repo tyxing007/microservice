@@ -3,5 +3,5 @@ build
 gradle
 .gradle/
 erp-server/resources/
-/api-client-server/node_modules
+api-client-server/node_modules
 resources/

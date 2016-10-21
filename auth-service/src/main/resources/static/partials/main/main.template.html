@@ -1,0 +1,30 @@
+<div class="container">
+
+    <div>
+        <li>Press Init Users button for adding Users</li>
+        <li>Input corresponding credentials: admin/admin or user/user</li>
+        <li>Get or no users dependently from credentials</li>
+    </div>
+    <hr>
+    <!--<form action="user/login" id="auth" method="post" autocomplete="off">-->
+        <input id="frontloginform" name="username" type="text" ng-model="user.username">
+        <input id="frontpasswordform" name="password" type="password" ng-model="user.password">
+
+        <input type="button" ng-click="initUsers()" value="Init Users">
+        <input type="button" ng-click="login()" value="Log In">
+        <input type="button" ng-click="logout()" value="Log Out">
+
+        <input type="button" ng-click="login2()" value="Log In2">
+
+    <!--</form>-->
+
+    <input type="button" ng-click="getPrincipal()" value="Get Principal">
+
+
+    <a href="/#/admin">to Admin Page</a>
+    <a href="/#/user">to User Page</a>
+
+
+    <ui-view></ui-view>
+
+</div>
