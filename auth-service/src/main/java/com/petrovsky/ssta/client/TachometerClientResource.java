@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @FeignClient("http://tachometerMicroService")
 public interface TachometerClientResource {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/tachometer/api/principalT", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @RequestMapping(method = RequestMethod.GET, value = "/tachometer/api/principal", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     String getPrincipalFromTachometer();
 }

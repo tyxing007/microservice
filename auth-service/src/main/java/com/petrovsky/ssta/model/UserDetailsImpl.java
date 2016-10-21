@@ -1,7 +1,5 @@
-package com.petrovsky.ssta.security.model;
+package com.petrovsky.ssta.model;
 
-import com.petrovsky.ssta.model.Authority;
-import com.petrovsky.ssta.model.User;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Set;

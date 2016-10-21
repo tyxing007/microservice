@@ -1,4 +1,4 @@
-package com.petrovsky.ssta.config;
+package com.petrovsky.ssta.config.jdbs;
 
 import com.petrovsky.ssta.model.User;
 import org.springframework.beans.factory.annotation.Value;
@@ -15,13 +15,14 @@ public class MySqlConnection {
     private String password;
     @Value("${jdbc.url}")
     private String urlConnect;
+    @Value("${jdbc.driver}")
+    private String driver;
 
     private Connection connect = null;
     private Statement statement = null;
 
     private void connection() throws Exception {
-        System.err.println("testt" + urlConnect);
-        Class.forName("com.mysql.cj.jdbc.Driver");
+        Class.forName(driver);
         connect = DriverManager.getConnection(String.format(urlConnect, username, password));
         statement = connect.createStatement();
     }
@@ -30,17 +31,22 @@ public class MySqlConnection {
         connect.close();
     }
 
-    public User getUserById(String email) throws Exception {
+    public User getUserByEmail(String email) throws Exception {
         connection();
-        ResultSet resultSet = statement.executeQuery(String.format("SELECT * FROM user WHERE email", email));
+        ResultSet resultSet = statement.executeQuery(String.format(DbQueries.SELECT_USER_BY_EMAIL, email));
         return writeResultSet(resultSet);
     }
 
     private User writeResultSet(ResultSet resultSet) throws SQLException {
-        User user = new User(
-                resultSet.getLong("id"),
-                resultSet.getString("email"),
-                resultSet.getString("password"));
+        Long id = null;
+        String email = null;
+        String passwordUser = null;
+        while (resultSet.next()) {
+            id = resultSet.getLong("id");
+            email = resultSet.getString("email");
+            passwordUser = resultSet.getString("password");
+        }
+        User user = new User(id, email, passwordUser);
         closeConnection();
         return user;
     }

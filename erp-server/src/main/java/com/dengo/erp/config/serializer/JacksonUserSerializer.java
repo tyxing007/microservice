@@ -44,7 +44,6 @@ public class JacksonUserSerializer extends JsonSerializer<User> {
             });
             gen.writeStringField("position", value.getPosition());
             gen.writeStringField("email", value.getEmail());
-            gen.writeStringField("password", value.getPassword());
             gen.writeStringField("phone", value.getPhone());
             gen.writeStringField("photo", value.getPhoto());
             gen.writeStringField("previewPhoto", value.getPreviewPhoto());

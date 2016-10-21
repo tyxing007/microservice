@@ -1,5 +1,4 @@
-package com.petrovsky.ssta.config;
-import com.petrovsky.ssta.security.service.UserDetailsServiceImpl;
+package com.petrovsky.ssta.config.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

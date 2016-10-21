@@ -25,7 +25,4 @@ public class UserTachometerService {
         return userTachometerRepository.findOne(userId);
     }
 
-    public String test(String testName) {
-        return tachometerClient.test(testName);
-    }
 }

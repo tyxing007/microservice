@@ -1,5 +1,6 @@
 package com.dengo.erp.controller;
 
+import com.dengo.erp.client.AuthServiceResource;
 import com.dengo.erp.model.User;
 import com.dengo.erp.service.MailService;
 import com.dengo.erp.service.UserService;
@@ -8,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.mail.MessagingException;
@@ -30,6 +32,8 @@ public class UserController {
     UserService userService;
     @Autowired
     MailService mailService;
+    @Autowired
+    AuthServiceResource authServiceResource;
 
     @RequestMapping(value = "/api/users", method = RequestMethod.GET)
     @ResponseStatus(value = HttpStatus.OK)
@@ -45,6 +49,11 @@ public class UserController {
         return userService.getUser(userId);
     }
 
+    @PreAuthorize("#oauth2.hasScope('ui')")
+    @RequestMapping(value = "/api/principal", method = RequestMethod.GET)
+    public String getPrincipalFromUaa(){
+        return  authServiceResource.getPrincipal();
+    }
 
 //    @PreAuthorize("#oauth2.hasScope('service')")
     @RequestMapping(value = "/api/user/email/{email}", method = RequestMethod.GET)

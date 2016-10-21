@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @FeignClient("http://auth-service")
 public interface AuthServiceResource {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/uaa/api/test", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    String test();
+    @RequestMapping(method = RequestMethod.GET, value = "/uaa/api/principal", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    String getPrincipal();
 
 }
