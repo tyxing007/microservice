@@ -37,10 +37,10 @@ import org.springframework.security.oauth2.provider.token.ResourceServerTokenSer
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @EnableResourceServer
 @EnableOAuth2Client
-public class  DengoErpApplication extends ResourceServerConfigurerAdapter {
+public class CCRMServiceApplication extends ResourceServerConfigurerAdapter {
 
 	public static void main(String[] args) {
-		SpringApplication dengoErpApplication = new SpringApplication(DengoErpApplication.class);
+		SpringApplication dengoErpApplication = new SpringApplication(CCRMServiceApplication.class);
 		dengoErpApplication.addListeners(new ApplicationPidFileWriter("erp-service.pid"));
 		dengoErpApplication.run(args);
 	}
