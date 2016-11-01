@@ -1,0 +1,136 @@
+.project-request {
+  .request-menu-wrapper {
+  }
+  /*REQUEST MENU*/
+  .request-menu {
+    width: 260px;
+    height: 480px;
+    box-shadow: 1px 1px 5px #ccc;
+    padding: 10px;
+    background-color: $white;
+    &__title {
+      padding-left: 10px;
+      font-size: 16px;
+      color: #565f68;
+    }
+    &__dropdown-btn {
+      border: none;
+      background-color: white;
+    }
+    &__dropdown-value {
+      color: #565f68;
+    }
+    &__dropdown-menu {
+      min-width: 205px;
+    }
+    .caret-icon {
+      left: 45px;
+      top: 3px;
+    }
+    &__tasks {
+      background: #f1f2f2;
+      min-height: 395px;
+      box-shadow: inset 0 6px 6px -6px;
+    }
+    &__search {
+      border: none;
+      background: inherit;
+      outline: none;
+    }
+    &__search-wrapper {
+      margin-left: 10px;
+      padding-top: 10px;
+    }
+    &__item {
+    }
+  }
+  /*BOARD TASK ITEM COMPONENT*/
+  .board-task {
+    width: 229px;
+    height: 80px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    border-right: 3px solid #ff931e;
+    padding: 7px 5px;
+    margin-bottom: 10px;
+    position: relative;
+    background-color: white;
+    &.board-task__request {
+      height: 55px;
+      margin-left: 5px;
+      margin-bottom: 5px;
+    }
+    &__header {
+      display: flex;
+    }
+    &__header-title {
+      font-weight: bold;
+    }
+    &__icon {
+      margin-right: 5px;
+      top: 2px;
+    }
+    &__icon--header {
+      color: #7ac943;
+    }
+    &__icon--task {
+      color: #ccc;
+    }
+    &__task {
+      display: flex;
+    }
+    &__task-text {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  /*BOARD TASK ITEM COMPONENT*/
+
+  /*pagination*/
+  .board-task-pagination-refresh {
+    float: left;
+    font-size: 13px;
+    cursor: pointer;
+    line-height: 25px;
+    &__discr {
+      padding-left: 5px;
+    }
+  }
+  .board-task-pagination {
+    margin: 0;
+    float: right;
+    .pagination-prev {
+      font-size: 20px;
+      & > a {
+        line-height: 17px;
+        outline: none;
+      }
+    }
+    .pagination-next {
+      font-size: 20px;
+      & > a {
+        line-height: 17px;
+        outline: none;
+      }
+    }
+    & > li > a {
+      border: none;
+      color: #aaaeb3;
+      background-color: transparent;
+      padding: 0 5px;
+    }
+    & > .active > a {
+      background-color: transparent;
+      color: #565f68;
+    }
+    & > .active > a:hover {
+      color: #565f68;
+    }
+    & > .disabled > a {
+      color: #aaaeb3;
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+}

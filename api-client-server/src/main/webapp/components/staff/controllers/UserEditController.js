@@ -21,19 +21,19 @@ app
         userService.getUser($stateParams.userId)
             .then(function (answer) {
                 $scope.user = answer;
+                console.log($scope.user);
             });
-
+        
         $scope.deleteImage = function () {
           $scope.file = null;
-            return userService.deleteImage($scope.user.id);
+            userService.deleteImage($scope.user.id);
         };
 
         $scope.saveUser = function (file) {
-            return userService.createUser($scope.user)
+            userService.createUser($scope.user)
                 .then(function () {
-                    var response = userService.uploadImage(file, $scope.user.id);
+                    userService.uploadImage(file, $scope.user.id);
                     $state.go('app.main');
-                    return response;
                 });
         };
 

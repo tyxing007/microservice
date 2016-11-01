@@ -43,10 +43,10 @@ app
         //Returns boolean
         $scope.search = function(item){
             if (!$scope.searchText
-                || ( item.name != null && item.name.toLowerCase().indexOf($scope.searchText.toLowerCase()) != -1)
-                || ( item.position != null && item.position.toLowerCase().indexOf($scope.searchText.toLowerCase()) != -1)
-                || ( item.email != null && item.email.toLowerCase().indexOf($scope.searchText.toLowerCase()) != -1)
-                || ( item.phone != null && item.phone.toLowerCase().indexOf($scope.searchText.toLowerCase()) != -1)) {
+                || (item.name.toLowerCase().indexOf($scope.searchText.toLowerCase()) != -1)
+                || (item.position.toLowerCase().indexOf($scope.searchText.toLowerCase()) != -1)
+                || (item.email.toLowerCase().indexOf($scope.searchText.toLowerCase()) != -1)
+                || (item.phone.toLowerCase().indexOf($scope.searchText.toLowerCase()) != -1)) {
                 return true;}
             return false;
         };

@@ -1,210 +1,204 @@
 .project {
   height: 100%;
+  padding-top: 33px;
   background-color: #f2f2f2;
-
-   .top-select-project{
-      margin-right: 12px;
-      margin-left: 12px;
-      background: rgb(255,255,255);
-      color: rgba(0,0,0,0.54);
+  .project-top-nav {
+    height: 33px;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.3);
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    top: 60px;
+    .nav-tabs {
+      border: none;
+      > li {
+        padding: 0 5px 0 5px;
+        margin-bottom: 0;
+      }
+      a {
+        color: #565f68;
+        font-family: Lato, serif;
+        font-size: 16px;
+        border: none;
+        padding: 6px 23px 3px 23px;
+        &:hover {
+          background-color: transparent;
+          font-weight: bold;
+        }
+      }
+    }
+    .top-select-project {
+      height: 33px;
+      padding-right: 0;
+      .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+        font-weight: bold;
+        border: 2px none transparent;
+        border-bottom: solid #56b4c1;
+      }
+      .project-dropdown {
+        padding: 5px 0 5px 10px;
+        a {
+          font-family: Lato, serif;
+          font-size: 16px;
+          color: #565f68;
+          text-decoration: none;
+        }
+        span.glyphicon {
+          padding-left: 15px;
+          padding-top: 3px;
+        }
+      }
+    }
   }
-   .top-menu-panel{
-      margin: 15px 10px 15px 10px;
-      background: rgb(255,255,255);
-      color:rgba(0,0,0,0.54);
+  .top-select-project {
+    background: rgb(255, 255, 255);
   }
-   .top-top-select-board{
-       background-color: #f2f2f2
-   }
-    .top-select-board{
-       margin-top: 15px;
-       width: 100%;
-       background: rgb(255,255,255);
-       color: rgba(0,0,0,0.54);
-   }
-    .top-sprint-filters{
-       margin-right: 10px;
-       margin-top: 15px;
-       background: rgb(255,255,255);
-       color: rgba(0,0,0,0.54);
-   }
-    .top-colomns-status{
-       padding-left: 16px;
-   }
-   .top-task{
-      min-height: 55px;
+  .top-sprint-filters {
+    margin-right: 10px;
+    margin-top: 15px;
+    background: rgb(255, 255, 255);
+    color: rgba(0, 0, 0, 0.54);
   }
-   .task-description{
-      margin-right: 50px
+  .top-colomns-status {
+    padding-left: 16px;
   }
-   .task-status{
-      text-align: center;
+  .top-task {
+    min-height: 55px;
   }
-   .select-project{
-    margin: 27px 25px 27px 25px;
+  .task-description {
+    margin-right: 50px
   }
-   .button-project{
+  .task-status {
+    text-align: center;
+  }
+  .select-project {
+    margin: 10px 25px 0 25px;
+  }
+  .button-project {
     width: 100%;
     margin: 12px 6px 12px 6px;
     padding-left: 0px;
     padding-right: 0px;
   }
-   .project-remains{
-      margin-bottom: 0px;
-      margin-top: 7px;
+  .project-remains {
+    margin-bottom: 0;
+    margin-top: 7px;
   }
-   .project-menu{
+  .project-menu {
     flex-direction: row;
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
   }
 
-   .task-settings div:last-child{
-      margin-top: 10px;
+  .task-settings div:last-child {
+    margin-top: 10px;
   }
 
-   .project-setting{
+  .project-setting {
     margin-top: 20px;
     flex-direction: row;
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
   }
-   .menu-icon{
-    margin: 1px 10px 0px 10px;
+  .menu-icon {
+    margin: 5px 5px 15px 20px;
   }
-   .select-filter{
-    margin: 11px 0px 0px 0px ;
+  .select-filter {
+    margin: 11px 0px 0px 0px;
   }
-   .select-filter ._md-select-value{
+  .select-filter ._md-select-value {
     border-bottom-width: 0px;
     border-bottom-style: none;
   }
-   .menu-more{
+  .menu-more {
     margin: 0px;
   }
-   .icon-remain{
+  .icon-remain {
     margin-right: 5px;
     margin-left: 0px;
   }
-   ._md-subheader-wrapper .md-subheader._md{
-    margin-left: 0px !important;
-    display: inline-block;
-  }
-   ._md-subheader-wrapper{
-    margin-left: 0px !important;
-  }
-   md-list-item{
-    display: block !important;
-  }
-   md-list-item.md-3-line .md-list-item-text h4{
-    white-space: normal;
-  }
-   .item{
+  .item {
     background-color: white;
     //margin-bottom: 5px;
   }
-   .main-content{
+  .main-content {
     height: 600px;
     background-color: #f2f2f2;
   }
-   .grab-item{
+  .grab-item {
     cursor: pointer;
   }
-  .top-info-project{
-    display: inline;
-  }
-  .top-info-start-header-date{
-    margin-bottom: 0px;
-  }
-  .top-info-start-header-people{
-    margin-bottom: 10px;
-    margin-top: 5px;
-  }
-  .top-people-margin{
-    margin-left: 15px;
-    margin-top: 15px;
-  }
-  .top-info-start-date{
-    margin-bottom: 0px;
-    margin-top: 0px;
-  }
-  .top-info-deadline-header-date{
-    margin-bottom: 0px;
-    margin-top: 0px;
-  }
-  .project-avatar{
-    width: 85%;
-  }
-  .divider-margin{
+  .divider-margin {
     margin-bottom: 5px;
   }
-  div button{
-    margin: 0px;
-    padding-left: 0px;
-  }
-  div .md-button:not([disabled]):hover {
-    background-color: transparent;
-  }
-  .all-project h4 {
-    margin: 0px;
-  }
-  .button-edit-project{
+  .button-edit-project {
     width: 40%;
     margin: 35px 6px 12px 6px;
     padding-left: 0px;
     padding-right: 0px;
   }
-  .top-column{
-    margin-top:15px;
+  .top-column {
+    margin-top: 15px;
     margin-left: 9px;
   }
-  .top-right-column{
-    margin-right: 10px;
-    margin-top: 15px;
-    background: #f2f2f2;
-    color: rgba(0,0,0,0.54);
-  }
-  .top-right-subcolumn{
-    background: #fff;
-  }
-  .top-right-right-subcolumn{
-    margin-right: 10px;
-    margin-top: 15px;
-    background: #fff;
-  }
-  .top-right-left-subcolumn{
-    margin-left: 10px;
-    margin-top: 15px;
-    background: #fff;
-  }
-  .top-right-subcolumn-header{
+  .top-right-subcolumn-header {
     margin-left: 15px;
   }
-  .top-right-subcolumn-main-text{
+  .top-right-subcolumn-main-text {
     margin-left: 15px;
     margin-right: 20px;
     margin-top: 0px;
   }
-  .edit-button{
+  .edit-button {
     margin-right: 5px;
     margin-top: 5px;
   }
-  .technology md-chips-wrap{
+  .technology md-chips-wrap {
     max-width: 100%;
     margin-left: 15px;
     margin-right: 20px;
     margin-top: 0px;
   }
-  .working-weeks{
+  .working-weeks {
     text-align: center;
     width: 100%;
   }
-  .margin-top-90{
-    margin-top: 90px;
+  .bg-white {
+    background: #ffffff;
   }
-  md-toolbar{
-    position: static;
+  .btn-filter {
+    box-shadow: none;
+    border: 1px solid lightgrey;
   }
+  .avatars {
+    margin-bottom: 8px;
+    margin-right: 16px;
+    border-radius: 50%;
+    box-sizing: content-box;
+    width: 30px;
+    height: 30px;
+  }
+}
+
+//.md-select-menu-container {
+//  top: 116px!important;
+//  left: 101px!important;
+//  md-select-menu md-content {
+//    md-option[selected] {
+//      color: #565f68;
+//    }
+//    md-option:last-child {
+//      background-color: #56b4c1;
+//      color: white;
+//      &:hover {
+//        background-color: #56b4c1;
+//      }
+//    }
+//  }
+//}
+
+.all-content {
+  padding: 60px 0 0 90px;
 }

@@ -9,5 +9,6 @@ app
         userService.getUser($stateParams.userID)
             .then(function (answer) {
                 $scope.user = answer;
+                console.log($scope.user);
             });
     });

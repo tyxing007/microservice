@@ -89,10 +89,10 @@ app
                 templateUrl: 'template/projects.html'
             })
 
+
             .state('app.projects.task', {
                 url: "/task",
-                controller: 'ProjectsTaskController',
-                templateUrl: 'template/projects.task.html'
+                templateUrl: 'template/projects.task.sidebar.html'
             })
 
             .state('app.projects.task.sprint', {
@@ -105,6 +105,12 @@ app
                 url: "/backlog",
                 controller: 'ProjectsTaskBacklogController',
                 templateUrl: 'template/projects.task.backlog.html'
+            })
+
+            .state('app.projects.task.request', {
+                url: "/request",
+                controller: 'ProjectsTaskRequestController',
+                templateUrl: 'template/projects.task.request.html'
             })
 
             .state('app.projects.info', {

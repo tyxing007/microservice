@@ -1,4 +1,139 @@
-<div layout="row" class="top-right-subcolumn top-column flex-85" flex="85">
-    <span style="padding: 10px">Backlog</span>
+<div class="tasks-backlog">
+<div class="col-lg-10 sprint-board">
+    <div class="sprint-board-header backlog-board-header col-lg-12">
+        <div class="sprint-board-header-title">
+            <span>Backlog</span>
+        </div>
+        <div class="sprint-board-header-filters">
+            <span>Filters</span>
+            <div class="sprint-board-header-filters__item">
+                <span>Only my requests</span>
+            </div>
+            <div class="sprint-board-header-filters__item">
+                <span>Recently added</span>
+            </div>
+        </div>
+        <div class="sprint-board-header-remains">
+            <div class="btn-group" uib-dropdown is-open="status.isopen">
+                <span class="glyphicon glyphicon-option-vertical sprint-board-more-option-btn" uib-dropdown-toggle></span>
+                <ul class="dropdown-menu sprint-board-header-dropdown" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                    <li role="menuitem"><a href="#">Setting</a></li>
+                    <li role="menuitem"><a href="#">Copy</a></li>
+                    <li class="divider"></li>
+                    <li role="menuitem"><a href="#">Create board</a></li>
+                    <li class="divider"></li>
+                    <li role="menuitem"><a href="#">Collapse all swimlines</a></li>
+                    <li role="menuitem"><a href="#">Hide epic lables</a></li>
+                    <li role="menuitem"><a href="#">Print cards</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
+    <div class="backlog-task-panel">
+        <!--BACKLOG TASK TITLE-->
+        <div class="backlog-task-title top-task-title-position">
+            <div class="backlog-task-title__header clearfix">
+                <div class="backlog-task-title__header-title">DEN Sprint 1</div>
+                <div class="backlog-task-title__header-lables">Story(5), Tasks(6), Bags(2)</div>
+                <span class="glyphicon glyphicon-pencil backlog-task-title__edit-icon"></span>
+                <div class="backlog-task-title__header-dates">
+                    <span class="glyphicon glyphicon-time"></span>
+                    <span>12/07-21/07</span>
+                </div>
+            </div>
+            <div class="backlog-task-title__people">
+                <img src="https://material.angularjs.org/latest/img/list/60.jpeg"
+                     class="backlog-task-title__person-avatar" alt="Project Ava">
+                <img src="https://material.angularjs.org/latest/img/list/60.jpeg"
+                     class="backlog-task-title__person-avatar" alt="Project Ava">
+                <img src="https://material.angularjs.org/latest/img/list/60.jpeg"
+                     class="backlog-task-title__person-avatar" alt="Project Ava">
+                <img src="https://material.angularjs.org/latest/img/list/60.jpeg"
+                     class="backlog-task-title__person-avatar" alt="Project Ava">
+                <img src="https://material.angularjs.org/latest/img/list/60.jpeg"
+                     class="backlog-task-title__person-avatar" alt="Project Ava">
+                <span class="glyphicon glyphicon-option-horizontal backlog-task-title__people-more-icon"></span>
+            </div>
+        </div>
+        <!--BACKLOG TASK TITLE-->
+
+        <!--BACKLOG TASK ITEM(without avatar)-->
+        <div class="backlog-task-item clearfix">
+            <span class="glyphicon glyphicon-align-left backlog-task-item__status-icon--backlog"></span>
+            <span class="glyphicon glyphicon-arrow-up backlog-task-item__arrow-icon"></span>
+            <span class="backlog-task-item__task-title">DEN-3</span>
+            <span class="backlog-task-item__task-text">Вивчення можливостей інтеграції Skype до CRM</span>
+        </div>
+        <!--BACKLOG TASK ITEM(without avatar)-->
+
+        <!--BACKLOG TASK ITEM-->
+        <div class="backlog-task-item clearfix">
+            <span class="glyphicon glyphicon-ok backlog-task-item__status-icon--done"></span>
+            <span class="glyphicon glyphicon-arrow-up backlog-task-item__arrow-icon"></span>
+            <span class="backlog-task-item__task-title">DEN-3</span>
+            <span class="backlog-task-item__task-text">Вивчення можливостей інтеграції Skype до CRM</span>
+            <img src="https://material.angularjs.org/latest/img/list/60.jpeg" class="backlog-task-item__avatar" alt="Project Ava">
+        </div>
+        <!--BACKLOG TASK ITEM-->
+        <!--BACKLOG TASK ITEM-->
+        <div class="backlog-task-item clearfix">
+            <span class="glyphicon glyphicon-remove backlog-task-item__status-icon--cancel"></span>
+            <span class="glyphicon glyphicon-arrow-down backlog-task-item__arrow-icon"></span>
+            <span class="backlog-task-item__task-title">DEN-3</span>
+            <span class="backlog-task-item__task-text">Вивчення можливостей інтеграції Skype до CRM</span>
+            <img src="https://material.angularjs.org/latest/img/list/60.jpeg" class="backlog-task-item__avatar" alt="Project Ava">
+        </div>
+
+        <!--BACKLOG TASK ITEM-->
+        <!--BACKLOG TASK ITEM-->
+        <div class="backlog-task-item clearfix">
+            <span class="glyphicon glyphicon-ok backlog-task-item__status-icon--done"></span>
+            <span class="glyphicon glyphicon-arrow-right backlog-task-item__arrow-icon"></span>
+            <span class="backlog-task-item__task-title">DEN-3</span>
+            <span class="backlog-task-item__task-text">Вивчення можливостей інтеграції Skype до CRM</span>
+            <img src="https://material.angularjs.org/latest/img/list/60.jpeg" class="backlog-task-item__avatar" alt="Project Ava">
+        </div>
+        <!--BACKLOG TASK ITEM-->
+
+        <!--BACKLOG TASK TITLE-->
+        <div class="backlog-create-task backlog-task-title">
+            <div class="backlog-task-title__header clearfix">
+                <div class="backlog-task-title__header-title">Other tasks</div>
+                <div class="backlog-task-title__header-lables">Tasks(2), Bags(1)</div>
+            </div>
+            <button class="backlog-create-task__btn">Create sprint</button>
+        </div>
+        <!--BACKLOG TASK TITLE-->
+
+        <!--BACKLOG TASK ITEM-->
+        <div class="backlog-task-item clearfix">
+            <span class="glyphicon glyphicon-ok backlog-task-item__status-icon--done"></span>
+            <span class="glyphicon glyphicon-arrow-up backlog-task-item__arrow-icon"></span>
+            <span class="backlog-task-item__task-title">DEN-3</span>
+            <span class="backlog-task-item__task-text">Вивчення можливостей інтеграції Skype до CRM</span>
+            <img src="https://material.angularjs.org/latest/img/list/60.jpeg" class="backlog-task-item__avatar" alt="Project Ava">
+        </div>
+        <!--BACKLOG TASK ITEM-->
+        <!--BACKLOG TASK ITEM-->
+        <div class="backlog-task-item clearfix">
+            <span class="glyphicon glyphicon-remove backlog-task-item__status-icon--cancel"></span>
+            <span class="glyphicon glyphicon-arrow-down backlog-task-item__arrow-icon"></span>
+            <span class="backlog-task-item__task-title">DEN-3</span>
+            <span class="backlog-task-item__task-text">Вивчення можливостей інтеграції Skype до CRM</span>
+            <img src="https://material.angularjs.org/latest/img/list/60.jpeg" class="backlog-task-item__avatar" alt="Project Ava">
+        </div>
+        <!--BACKLOG TASK ITEM-->
+        <!--BACKLOG TASK ITEM-->
+        <div class="backlog-task-item clearfix">
+            <span class="glyphicon glyphicon-ok backlog-task-item__status-icon--done"></span>
+            <span class="glyphicon glyphicon-arrow-right backlog-task-item__arrow-icon"></span>
+            <span class="backlog-task-item__task-title">DEN-3</span>
+            <span class="backlog-task-item__task-text">Вивчення можливостей інтеграції Skype до CRM</span>
+            <img src="https://material.angularjs.org/latest/img/list/60.jpeg" class="backlog-task-item__avatar" alt="Project Ava">
+        </div>
+        <!--BACKLOG TASK ITEM-->
+    </div>
+</div>
+</div>
 </div>

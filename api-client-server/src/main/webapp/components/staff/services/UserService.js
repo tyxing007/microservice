@@ -26,19 +26,19 @@ app
             },
 
             uploadImage: function (file, userId) {
-                return serverService.uploadImage(file,userId);
+                serverService.uploadImage(file,userId);
             },
 
             deleteImage: function (userId) {
-                return serverService.deleteImage(userId);
+                serverService.deleteImage(userId);
             },
 
             createUser: function (user) {
                 return serverService.createUser(user);
             },
 
-            sendToEmail: function (email, type) {
-                return serverService.sendToEmail(email, type);
+            sendToEmail: function (email, type, candidate) {
+                return serverService.sendToEmail(email, type, candidate);
             }
 
 

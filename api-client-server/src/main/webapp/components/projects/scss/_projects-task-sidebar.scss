@@ -1,0 +1,50 @@
+.side-menu {
+  width: 260px;
+  height: 450px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  margin: auto;
+  margin-top: 15px;
+  border-bottom: 1px solid #eceded;
+  background-color: white;
+  &__header {
+    padding: 20px;
+    border-bottom: 1px solid #eceded;
+    position: relative;
+    height: 70px;
+  }
+  &__board-subtitle {
+    font-size: 12px;
+  }
+  &__board-title {
+    font-weight: bold;
+    font-size: 16px;
+    color: #565f68;
+  }
+  &__more-options-icon {
+    position: absolute;
+    top: 35px;
+    left: 230px;
+    color: #565f68;
+    font-size: 18px;
+  }
+  &__menu-wrapper {
+    padding: 20px 0 10px 20px;
+  }
+  &__menu {}
+  &__item {
+    list-style: none;
+    margin-bottom: 10px;
+    color: #aaafb3;
+    font-size: 16px;
+  }
+  &__item:last-child {
+    margin-top: 25px;
+  }
+  &__item:hover {
+    border-right: 3px solid #56b4c1;
+    color: #565f68;
+  }
+  &__item-icon {
+    margin-right: 10px;
+  }
+}

@@ -3,7 +3,7 @@
  *
  * @author Kulinenko Roman, Sem Babenko
  */
-app.controller('ProjectsInfoController', function ($scope, serverService) {
+app.controller('ProjectsInfoController', function ($scope, $sce, serverService) {
 
     $scope.lock_description = true;
     $scope.icon_description = 'edit';
@@ -118,4 +118,5 @@ app.controller('ProjectsInfoController', function ($scope, serverService) {
         });
     }
 
+    $scope.personPopover = $sce.trustAsHtml('<h5 class=\'top-info-team__popover-name\'>Roman Kulinenko</h5><span class=\'top-info-team__popover-role\'>Software developer</span>');
 });

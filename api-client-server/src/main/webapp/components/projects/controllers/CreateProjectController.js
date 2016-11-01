@@ -2,7 +2,7 @@
  * Create Project Controller
  * @author Kulinenko Roman, Sem Babenko
  */
-app.controller('CreateProjectController', function ($scope, serverService, projectService, $mdDialog, moment, formats, $rootScope) {
+app.controller('CreateProjectController', function ($scope, serverService, projectService, $mdDialog, moment, formats) {
 
     $scope.project = {
         startDate: moment().format(formats.date)
@@ -21,9 +21,8 @@ app.controller('CreateProjectController', function ($scope, serverService, proje
     $scope.answer = function(answer) {
         $mdDialog.hide(answer);
         $scope.project.dueDate = moment($scope.dueDate).format(formats.date);
-        return projectService.saveProject($scope.project).then(function(response){
-            $rootScope.$broadcast("append-project", response);
-            return response;
+        projectService.saveProject($scope.project).then(function(response){
+            $scope.$root.$broadcast("append-project", response);
         });
     };
 

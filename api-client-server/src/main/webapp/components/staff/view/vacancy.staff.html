@@ -72,6 +72,7 @@
                         </div>
                         <div flex="20" layout="column" class="div-for-add-flex-vacancy">
                             <span class="height-for-span-text" style="cursor: pointer" ng-click="openAddParticipant($event, vacancy)">+ Add participant</span>
+                            <span class="height-for-span-text" style="cursor: pointer">+ Add interview</span>
                         </div>
                         <div flex="5" layout="column" class="div-for-edit-vacancy">
                     <span class="height-for-span-text"
@@ -119,7 +120,7 @@
                                             </div>
                                             <div layout="row" flex="50" ng-repeat="candidate in vacancy.candidates  | orderBy: 'id'" ng-if="$index == 0">
                                                 <div layout="column" flex="100"
-                                                     ng-repeat="step in candidate.stepToCandidate | filter:{vacancy:{id:  vacancy.id}} track by $index">
+                                                     ng-repeat="step in candidate.stepToCandidate  track by $index">
                                                     <div layout="column" flex="100"  class="div-for-candidates-in-vacation-header">
                                                         <a>step {{$index + 1}}</a>
                                                     </div>
@@ -139,14 +140,14 @@
                                             </div>
                                         </div>
                                         <div layout="row" class="list-candidates-in-vacancy"
-                                             ng-repeat="candidate in vacancy.candidates | orderBy: '-totalScore'">
+                                             ng-repeat="candidate in vacancy.candidates  | orderBy: '-totalScore'">
                                             <div layout="column" flex="20" class="div-for-candidates-in-vacation">
                                                 <a>{{candidate.name}} {{candidate.lastName}}</a>
                                             </div>
                                             <div layout="row" flex="50">
                                                 <div layout="column" flex="100"
-                                                     ng-repeat="step in candidate.stepToCandidate | filter:{vacancy:{id:  vacancy.id}} | orderBy: 'id'"
-                                                     class="div-for-candidates-in-vacation"  ng-click="openStepInfo(vacancy.id, candidate.id, step.id, $event, step.date, vacancy)">
+                                                     ng-repeat="step in candidate.stepToCandidate  track by $index"
+                                                     class="div-for-candidates-in-vacation"  ng-click="openStepInfo(vacancy.id, candidate.id, step.id, $event, step.gpaMark)">
                                                     <div  ng-if="step.file == null">
                                                         <a>{{vacancy.nameStep[$index]}}</a>
                                                         <div class="mark-for-step"><a>{{step.gpaMark}}</a></div>
@@ -158,15 +159,12 @@
                                                             </ng-md-icon>
                                                         </a></div>
                                                     </div>
-                                                    <div ng-if="step.date != '0000-01-01'" >
+                                                    <div ng-if="step.date">
                                                         <a style="border-bottom: 1px solid black; cursor: pointer">
                                                             {{step.date | date:'dd-MM-yyyy'}}
                                                         </a>
                                                     </div>
                                                     <div ng-if="!step.date">
-                                                        <a style="border-bottom: 1px solid black; cursor: pointer">dd-mm-yyyy</a>
-                                                    </div>
-                                                    <div ng-if="step.date == '0000-01-01'">
                                                         <a style="border-bottom: 1px solid black; cursor: pointer">dd-mm-yyyy</a>
                                                     </div>
                                                 </div>

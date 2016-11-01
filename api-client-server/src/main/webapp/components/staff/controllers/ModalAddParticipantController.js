@@ -1,15 +1,16 @@
 /**
- * Modal add interview Controller on client
+ * Modal Create Vacancy Controller on client
  *
  * @author Andrii Blyznuk
  */
 app
-    .controller('ModalAddParticipantController', function ($scope, CandidateTypeEnum, $mdDialog, autocompleteService, $rootScope, formats, data, vacancyService, userService) {
+    .controller('ModalAddParticipantController', function ($scope, CandidateTypeEnum, $mdDialog, autocompleteService, data, vacancyService, userService) {
 
         $scope.getAutocompleteData = autocompleteService.getAutocompleteDataFromServer;
         $scope.candidateType = CandidateTypeEnum;
         $scope.vacancy = data.vacancy;
         $scope.selectCandidate = null;
+        $scope.stepDate = null;
         $scope.stepDate = [];
         var count = 0;
 
@@ -20,19 +21,15 @@ app
                                 name: step,
                                 stepToCandidate: {
                                     id: null,
-                                    date: null,
+                                    date: new Date(),
                                     interviewer: [],
-                                    vacancy: { id: data.vacancy.id,
-                                               name: data.vacancy.name},
                                     marks: [],
-                                    time: null,
-                                    gpaMark: 0,
+                                    time: "12:38:58.492",
                                     file: null}
                                 };
             count++;
         });
 
-        $scope.date = null;
 
         //Creating object candidate
         $scope.newCandidate = {
@@ -41,9 +38,8 @@ app
             name: "",
             lastName: "",
             type: "CANDIDATE",
-            statusToCandidate: CandidateTypeEnum.PENDING,
-            stepToCandidate: [],
-            totalScore: 0
+            statusToCandidate: new Array(),
+            stepToCandidate: []
         };
 
         //The function is executed when the user clicks
@@ -51,22 +47,17 @@ app
         // This feature adds the candidate to the vacancy
         // that is sent to the server where it is stored
         $scope.saveVacancy = function () {
-            var selectCandidatePresent = false;
-            _.filter($scope.vacancy.candidates,function (candidate) {
-                if($scope.selectCandidate != null && candidate.id == $scope.selectCandidate.id){
-                    selectCandidatePresent = true;
-                }
-            });
 
             //This condition responds to a particular candidate
             // elected from existing or create a new candidate
-            if ($scope.selectCandidate == null ) {
+            if ($scope.selectCandidate == null) {
 
                 //This cycle adds that the number of steps for the candidate indicated in vacancy
                 for (var i = 0; i < $scope.vacancy.nameStep.length; i++) {
                     for (var j = 0; j <  $scope.stepDate.length; j++) {
                         if ($scope.vacancy.nameStep[i] == $scope.stepDate[j].name){
                             $scope.newCandidate.stepToCandidate[i] = $scope.stepDate[j].stepToCandidate;
+                            $scope.newCandidate.stepToCandidate[i].date = moment($scope.newCandidate.stepToCandidate[j].date).format("YYYY-MM-DD");
                         }
                     }
                 }
@@ -77,24 +68,21 @@ app
                 userService.createUser($scope.newCandidate).then(function (answer) {
                     $scope.newCandidate.id = answer.data.id;
                     $scope.vacancy.candidates[$scope.vacancy.candidates.length] = $scope.newCandidate;
-                    vacancyService.createVacancy($scope.vacancy).then(function (answer) {
-                        $rootScope.$broadcast("EditVacancyStaff", answer.data);
-                    });
+                    vacancyService.createVacancy($scope.vacancy);
                 })
-            }else if(!selectCandidatePresent){
+            }else {
 
                 //This cycle adds that the number of steps for the candidate indicated in vacancy
                 for (var i = 0; i < $scope.vacancy.nameStep.length; i++) {
                     for (var j = 0; j <  $scope.stepDate.length; j++) {
                         if ($scope.vacancy.nameStep[i] == $scope.stepDate[j].name){
-                            $scope.selectCandidate.stepToCandidate[$scope.selectCandidate.stepToCandidate.length] = $scope.stepDate[j].stepToCandidate;
+                            $scope.selectCandidate.stepToCandidate[i] = $scope.stepDate[j].stepToCandidate;
+                            $scope.selectCandidate.stepToCandidate[i].date = moment($scope.selectCandidate.stepToCandidate[j].date).format("YYYY-MM-DD");
                         }
                     }
                 }
                 $scope.vacancy.candidates[$scope.vacancy.candidates.length] = $scope.selectCandidate;
-                vacancyService.createVacancy($scope.vacancy).then(function (answer) {
-                    $rootScope.$broadcast("EditVacancyStaff", answer.data);
-                });
+                vacancyService.createVacancy($scope.vacancy);
             }
             $mdDialog.cancel();
         };

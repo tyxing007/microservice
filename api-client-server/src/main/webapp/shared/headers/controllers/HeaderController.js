@@ -4,45 +4,52 @@
  * @author
  */
 app
-    .controller('HeaderController', function ($scope, $timeout, $mdSidenav, $log) {
-        $scope.toggleLeft = buildDelayedToggler('left');
-        $scope.toggleRight = buildToggler('right');
-        $scope.isOpenRight = function(){
-            return $mdSidenav('right').isOpen();
-        };
+    .controller('HeaderController', function ($scope) {
 
-        function debounce(func, wait, context) {
-            var timer;
-
-            return function debounced() {
-                var context = $scope,
-                    args = Array.prototype.slice.call(arguments);
-                $timeout.cancel(timer);
-                timer = $timeout(function() {
-                    timer = undefined;
-                    func.apply(context, args);
-                }, wait || 10);
-            };
-        }
-
-
-        function buildDelayedToggler(navID) {
-            return debounce(function() {
-                $mdSidenav(navID)
-                    .toggle()
-                    .then(function () {
-                        $log.debug("toggle " + navID + " is done");
-                    });
-            }, 200);
-        }
-
-        function buildToggler(navID) {
-            return function() {
-                $mdSidenav(navID)
-                    .toggle()
-                    .then(function () {
-                        $log.debug("toggle " + navID + " is done");
-                    });
-            }
-        }
     });
+app.controller('AppCtrl', function() {
+
+});
+
+app.controller('DropdownCtrl', function ($scope, $log) {
+    $scope.items = [
+        'The first choice!',
+        'And another choice for you.',
+        'but wait! A third!'
+    ];
+
+});
+
+$(function () {
+    // Remove Search if user Resets Form or hits Escape!
+    $('body').on('keyup', function(event) {
+        if (event.which == 27 && $('.navbar-collapse form[role="search"]').hasClass('active')) {
+            closeSearch();
+        }
+    }).on('click', '.navbar-collapse form[role="search"] button[type="reset"]', function() {
+        closeSearch();
+    });
+    function closeSearch() {
+        var $form = $('.navbar-collapse form[role="search"].active');
+        $form.find('input').val('');
+        $form.removeClass('active');
+    }
+    // Show Search if form is not active // event.preventDefault() is important, this prevents the form from submitting
+    $(document).on('click', '.navbar-collapse form[role="search"]:not(.active) button[type="submit"]', function(event) {
+        event.preventDefault();
+        var $form = $(this).closest('form'),
+            $input = $form.find('input');
+        $form.addClass('active');
+        $input.focus();
+
+    });
+    // ONLY FOR DEMO // Please use $('form').submit(function(event)) to track from submission
+    // if your form is ajax remember to call `closeSearch()` to close the search container
+    // $(document).on('click', '.navbar-collapse form[role="search"].active button[type="submit"]', function(event) {
+    //     event.preventDefault();
+    //     var $form = $(this).closest('form'),
+    //         $input = $form.find('input');
+    //     $('#showSearchTerm').text($input.val());
+    //     // closeSearch()
+    // });
+});

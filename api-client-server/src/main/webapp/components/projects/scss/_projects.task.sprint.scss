@@ -1,0 +1,166 @@
+.active-sprint {
+
+  .task-panel {
+    padding-left: 15px;
+    &__item {
+      background-color: #f1f2f2;
+      padding: 10px;
+      padding-right: 0;
+      margin-right: 10px;
+      min-height: 280px;
+    }
+    .board-task:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .sprint-board {
+    background-color: white;
+    height: 100%;
+    min-height: 880px;
+    margin-bottom: 10px;
+    padding: 0;
+    .sprint-board-more-option-btn {
+      margin-left: 10px;
+      position: relative;
+      cursor: pointer;
+    }
+    .sprint-board-header {
+      height: 45px;
+      border-bottom: 1px solid $backgr;
+      line-height: 45px;
+      display: flex;
+      &-title {
+        color: #4d4d4d;
+        font-size: 16px;
+      }
+      &-filters {
+        font-family: "Lato Light", serif;
+        display: flex;
+        color: #565f68;
+        margin-left: 30px;
+        &__item {
+          cursor: pointer;
+          margin-left: 10px;
+          span {
+            padding: 4px 9px 4px 9px;
+            border: 1px solid #cfcfcf;
+            border-radius: 5px;
+          }
+        }
+      }
+      &-remains {
+        margin-left: auto;
+        color: #666;
+        .glyphicon {
+          color: #cfcfcf;
+        }
+      }
+    }
+  }
+  .panel-default {
+    border: none;
+    box-shadow: none;
+  }
+  .status-header {
+    &__item-wrapper {
+      display: flex;
+      padding-top: 15px;
+    }
+    &__item {
+      list-style: none;
+      padding: 0 5.22%;
+    }
+  }
+  .task-accordition {
+    &__backlog-icon {
+      color: #179bd7;
+      margin: 0 10px;
+    }
+    &__task-lable {
+      font-weight: bold;
+    }
+    &__task-title {
+      margin-left: 10px;
+    }
+    &__task-number {
+      font-size: 12px;
+    }
+  }
+  /*BOARD TASK ITEM COMPONENT*/
+  .board-task {
+    width: 229px;
+    height: 80px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    border-right: 3px solid #ff931e;
+    padding: 7px 5px;
+    margin-bottom: 10px;
+    position: relative;
+    background-color: white;
+    &.board-task__request {
+      height: 55px;
+      margin-left: 5px;
+      margin-bottom: 5px;
+    }
+    &__header {
+      display: flex;
+    }
+    &__header-title {
+      font-weight: bold;
+    }
+    &__icon {
+      margin-right: 5px;
+      top: 2px;
+    }
+    &__icon--header {
+      color: #7ac943;
+    }
+    &__icon--task {
+      color: #ccc;
+    }
+    &__task {
+      display: flex;
+    }
+    &__avatar {
+      border-radius: 50%;
+      position: absolute;
+      width: 30px;
+      top: 10px;
+      left: 185px;
+    }
+  }
+  /*BOARD TASK ITEM COMPONENT*/
+
+  .sprint-board-header-dropdown {
+    left: -133px;
+  }
+
+  .backlog-board-header {
+    display: flex;
+    //margin-top: 13px;
+    &__search {
+      margin-left: 20px;
+      margin-top: 2px;
+      color: #bbbfc3;
+    }
+    &__search-input {
+      height: 23px;
+      border: none;
+      outline: none;
+      margin-left: 5px;
+      font-size: 16px;
+    }
+    &__moreoption-icon {
+      margin-left: 10px;
+    }
+    &__filters {
+      margin-left: auto;
+      display: flex;
+      color: #565f68;
+    }
+    &__title {
+      margin-left: 10px;
+      font-size: 16px;
+      color: #565f68;
+    }
+  }
+}

@@ -10,6 +10,15 @@ app
 
         return{
 
+            getTasks: function () {
+                var deferred = $q.defer();
+                serverService.getTasks()
+                    .then(function (response) {
+                        deferred.resolve(response)
+                    });
+                return deferred.promise;
+            },
+
             getPriorities() {
                 var deferred = $q.defer();
                 serverService.getPriorities()

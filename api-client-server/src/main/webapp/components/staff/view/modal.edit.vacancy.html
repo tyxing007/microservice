@@ -11,7 +11,7 @@
     <md-dialog-content class="md-dialog-content-edit-vacancy">
         <form name="vacancyForm">
             <div class="main-div-for-edit-vacancy">
-                <p>Current Position</p>
+                <p>Corrent Position</p>
                 <input required ng-model="newVacancy.name" type="text" placeholder="Write a position">
                 <p>Status</p>
                 <md-select placeholder="Select type" class="select-in-modal-edit-vacancy" ng-model="newVacancy.type">
@@ -31,6 +31,17 @@
                     </md-select>
                 </md-input-container>
                 <p></p>
+                <p>Step</p>
+                <md-chips md-require-match="true"
+                          class="md-chips-step"
+                          ng-model="newVacancy.nameStep"
+                          md-max-chips="4"
+                          placeholder="Enter a step"
+                          secondary-placeholder="+ Step"
+                          md-transform-chip="addChip($chip)">
+                    {{$chip}}
+                </md-chips>
+                <p></p>
                 <p>Information about vacancy</p>
                 <p>Duties and responsible</p>
                 <textarea class="text-area-in-modal-edit-vacancy" ng-model="newVacancy.dutiesAndResponsible"
@@ -48,7 +59,7 @@
         <md-button ng-click="cancel()">
             Close
         </md-button>
-        <md-button ng-click="saveVacancy()" ng-disabled="vacancyForm.$pristine" style="margin-right:20px;" >
+        <md-button ng-click="saveVacansy()" ng-disabled="vacancyForm.$pristine" style="margin-right:20px;" >
             Save
         </md-button>
     </md-dialog-actions>

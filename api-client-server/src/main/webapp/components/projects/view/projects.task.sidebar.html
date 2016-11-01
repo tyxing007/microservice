@@ -1,0 +1,50 @@
+<div class="project-tasks row">
+
+
+<div class="col-lg-2 left-menu-panel">
+<div>
+    <button class="button-project" ng-click="showCreteTask($event)">CREATE REQUEST</button>
+</div>
+<div class="side-menu">
+    <div class="side-menu__header">
+        <div class="side-menu__board-subtitle">Kanban board</div>
+        <div class="side-menu__board-title">Den Board</div>
+        <span class="glyphicon glyphicon-option-vertical side-menu__more-options-icon" aria-hidden="true"></span>
+    </div>
+    <nav class="side-menu__menu">
+        <ul class="side-menu__menu-wrapper">
+            <li ui-sref="app.projects.task.backlog" class="side-menu__item">
+                <span class="glyphicon glyphicon-align-center side-menu__item-icon" aria-hidden="true"></span>
+                <span>Backlog</span>
+            </li>
+            <li ui-sref="app.projects.task.sprint" class="side-menu__item">
+                <span class="glyphicon glyphicon-pause side-menu__item-icon" aria-hidden="true"></span>
+                <span>Active sprints</span>
+            </li>
+            <li class="side-menu__item">
+                <span class="glyphicon glyphicon-plane side-menu__item-icon" aria-hidden="true"></span>
+                <span>Releases</span>
+            </li>
+            <li class="side-menu__item">
+                <span class="glyphicon glyphicon-signal side-menu__item-icon" aria-hidden="true"></span>
+                <span>Statistic</span>
+            </li>
+            <li ui-sref="app.projects.task.request" class="side-menu__item" >
+                <span class="glyphicon glyphicon-search side-menu__item-icon" aria-hidden="true"></span>
+                <span >Request</span>
+            </li>
+            <li class="side-menu__item">
+                <span class="glyphicon glyphicon-flash side-menu__item-icon" aria-hidden="true"></span>
+                <span>Components</span>
+            </li>
+            <li class="side-menu__item">
+                <span class="glyphicon glyphicon-asterisk side-menu__item-icon" aria-hidden="true"></span>
+                <span>Setting</span>
+            </li>
+        </ul>
+    </nav>
+</div>
+</div>
+
+<div ui-view=""></div>
+</div>

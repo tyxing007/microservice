@@ -1,43 +1,64 @@
-<md-content class="project md-padding">
-    <div layout="row" class="margin-top-90">
-        <div class="top-select-project" flex="15">
-            <md-menu layout="column" layout-align="center center">
-                <md-button aria-label="Select project" ng-click="openMenu($mdOpenMenu, $event)">
-                    {{projectLabel}}
-                </md-button>
-                <md-menu-content width="3" >
-                    <md-menu-item ng-repeat="project in projects">
-                        <md-button ng-click="selectProject($event, project)">
-                            {{project.name}}
-                        </md-button>
-                    </md-menu-item>
-                    <md-menu-divider></md-menu-divider>
-                    <md-menu-item>
-                        <md-button ng-click="showCreteProject($event)">
-                            + Create new project
-                        </md-button>
-                    </md-menu-item>
-                </md-menu-content>
-            </md-menu>
-            <!--<md-input-container class="md-block select-project" flex-gt-sm="100">-->
-            <!--<label>Select project</label>-->
-            <!--<md-select ng-model="project.names">-->
-            <!--<md-option ng-repeat="name in names" value="{{name.projects}}">-->
-            <!--{{name.projects}}-->
-            <!--</md-option>-->
-            <!--</md-select>-->
-            <!--</md-input-container>-->
+<div class="project">
+    <div class="project-top-nav">
+        <div class="top-select-project col-md-2 col-sm-4">
+            <!--<md-menu layout="column" layout-align="center center">-->
+                <!--<md-button aria-label="Select project" ng-click="openMenu($mdOpenMenu, $event)">-->
+                    <!--<ng-md-icon icon="expand_more"></ng-md-icon>-->
+                <!--</md-button>-->
+                <!--<md-menu-content width="3" >-->
+                    <!--<md-menu-item ng-repeat="project in projects">-->
+                        <!--<md-button ng-click="selectProject($event, project)">-->
+                            <!--{{project.name}}-->
+                        <!--</md-button>-->
+                    <!--</md-menu-item>-->
+                    <!--&lt;!&ndash;<md-menu-divider></md-menu-divider>&ndash;&gt;-->
+                    <!--<md-menu-item>-->
+                        <!--<md-button ng-click="showCreteProject($event)">-->
+                            <!--+ Create new project-->
+                        <!--</md-button>-->
+                    <!--</md-menu-item>-->
+                <!--</md-menu-content>-->
+            <!--</md-menu>-->
+            <div class="project-dropdown">
+            <span uib-dropdown on-toggle="toggled(open)">
+                <a href uib-dropdown-toggle>
+                    Chose Project <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+                </a>
+                    <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown"
+                        ng-model="project.names">
+                        <li ng-click="dropProject(this)" ng-repeat="name in names" value="{{name.projects}}">
+                <a href>{{name.projects}}</a>
+                        </li>
+                    </ul>
+            </span>
+            </div>
         </div>
-        <div class="top-select-project" flex="85">
-            <div style="margin-top: 10px; margin-left: 18px;">
-                <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
-                    <md-nav-item ui-sref="app.projects.task" md-nav-click="goto('Tasks')" name="Tasks">Tasks</md-nav-item>
-                    <md-nav-item md-nav-click="goto('Structure')" name="Structure">Structure</md-nav-item>
-                    <md-nav-item md-nav-click="goto('Drive')" name="Drive">Drive</md-nav-item>
-                    <md-nav-item ui-sref="app.projects.info" md-nav-click="goto('Info')" name="Info">Info</md-nav-item>
-                </md-nav-bar>
+        <div class="top-select-project col-md-10 col-sm-8">
+                <div class="row" ng-controller="TabsDemoCtrl">
+                    <uib-tabset active="active">
+                        <uib-tab ui-sref="app.projects.task" md-nav-click="goto('Tasks')" name="Tasks">
+                            <uib-tab-heading>Tasks</uib-tab-heading>
+                        </uib-tab>
+                        <uib-tab md-nav-click="goto('Structure')" name="Structure">
+                            <uib-tab-heading>Structure</uib-tab-heading>
+                        </uib-tab>
+                        <uib-tab md-nav-click="goto('Drive')" name="Drive">
+                            <uib-tab-heading>Drive</uib-tab-heading>
+                        </uib-tab>
+                        <uib-tab ui-sref="app.projects.info" md-nav-click="goto('Info')" name="Info">
+                            <uib-tab-heading>Info</uib-tab-heading>
+                        </uib-tab>
+                    </uib-tabset>
+                <!--<md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">-->
+                    <!--<md-nav-item ui-sref="app.projects.task" md-nav-click="goto('Tasks')" name="Tasks">Tasks</md-nav-item>-->
+                    <!--<md-nav-item md-nav-click="goto('Structure')" name="Structure">Structure</md-nav-item>-->
+                    <!--<md-nav-item md-nav-click="goto('Drive')" name="Drive">Drive</md-nav-item>-->
+                    <!--<md-nav-item ui-sref="app.projects.info" md-nav-click="goto('Info')" name="Info">Info</md-nav-item>-->
+                <!--</md-nav-bar>-->
             </div>
         </div>
     </div>
-    <ui-view></ui-view>
-</md-content>
+
+    <div ui-view=""></div>
+
+</div>

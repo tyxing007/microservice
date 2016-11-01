@@ -1,235 +1,398 @@
-<div ng-controller="ProjectsInfoController as projectInfo" layout="row" class="project">
-    <div layout="column" class="top-menu-panel" flex="25">
-        <div layout="row">
-            <div layout="column" flex="30">
-                <img ng-src="https://material.angularjs.org/latest/img/list/60.jpeg" class="md-avatar project-avatar" alt="Project Ava">
-            </div>
-            <div layout="column" flex="45">
-                <div layout="row" class="top-info-project">
-                    <p class="top-info-start-header-date">Project</p>
-                    <h4 class="top-info-start-date">Dengo Service</h4>
+<div ng-controller="ProjectsInfoController as projectInfo" class="project-info col-md-12">
+    <div class="left-menu-panel col-lg-4">
+        <div class="column menu-panel-wrapper">
+
+            <div class="top-info-header">
+                <div class="top-info-header__avatar">
+                    <img src="https://material.angularjs.org/latest/img/list/60.jpeg"
+                         class="top-info-header__avatar-img">
                 </div>
-                <div layout="row" class="top-info-project">
-                    <p class="top-info-deadline-header-date">Area</p>
-                    <h4 class="top-info-start-date">Managment</h4>
+                <div class="top-info-header__project-info">
+                    <div>
+                        <p class="top-info-header__project-title">Project</p>
+                        <h4 class="top-info-header__project-name">Dengo Service</h4>
+                    </div>
+                    <div>
+                        <p class="top-info-header__project-title">Area</p>
+                        <h4 class="top-info-header__project-name">Managment</h4>
+                    </div>
                 </div>
-            </div>
-            <div layout="column" flex="25">
-                <div layout="row" class="top-info-project">
-                    <p class="top-info-start-header-date">Start</p>
-                    <h4 class="top-info-start-date">05.07.16</h4>
-                </div>
-                <div layout="row" class="top-info-project">
-                    <p class="top-info-deadline-header-date">Deadline</p>
-                    <h4 class="top-info-start-date">20.09.16</h4>
-                </div>
-            </div>
-        </div>
-        <md-divider class="divider-margin"></md-divider>
-        <div layout="row" class="top-people-margin">
-            <div layout="column" flex="20" layout-align="center start">
-                <img ng-src="https://material.angularjs.org/latest/img/list/60.jpeg" class="md-avatar project-avatar" alt="Project Ava">
-            </div>
-            <div layout="column" flex="80">
-                <div layout="row" class="top-info-project">
-                    <p class="top-info-start-header-people">Customer</p>
-                    <h5 class="top-info-start-date">Denis Petrusha</h5>
-                    <h5 class="top-info-start-date">CEO Dengo Systems</h5>
+                <div class="top-info-header__date-info">
+                    <div>
+                        <p class="top-info-header__date-title">Started date</p>
+                        <h4 class="top-info-header__date-value">05.07.16</h4>
+                    </div>
+                    <div>
+                        <p class="top-info-header__date-title">Deadline</p>
+                        <h4 class="top-info-header__date-value">20.09.16</h4>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div layout="row" class="top-people-margin">
-            <div layout="column" flex="20" layout-align="center start">
-                <img ng-src="https://material.angularjs.org/latest/img/list/60.jpeg" class="md-avatar project-avatar" alt="Project Ava">
-            </div>
-            <div layout="column" flex="80">
-                <div layout="row" class="top-info-project">
-                    <p class="top-info-start-header-people">Product Owner</p>
-                    <h5 class="top-info-start-date">Ivan Makhina</h5>
-                    <h5 class="top-info-start-date">Director Leadership</h5>
+
+            <div class="top-info-people">
+                <div>
+                    <p class="top-info-people__role">Customer</p>
+                </div>
+                <div>
+                    <div>
+                        <img ng-src="https://material.angularjs.org/latest/img/list/60.jpeg"
+                             class="top-info-people__avatar" alt="Project Ava">
+                    </div>
+                    <div class="top-info-people__title">
+                        <div class="top-info-people__person">
+                            <h5 class="top-info-people__person-name">Denis Petrusha</h5>
+                            <p class="top-info-people__person-role">CEO Dengo Systems</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div layout="row" class="top-people-margin">
-            <div layout="column" flex="20" layout-align="center start">
-                <img ng-src="https://material.angularjs.org/latest/img/list/60.jpeg" class="md-avatar project-avatar" alt="Project Ava">
-            </div>
-            <div layout="column" flex="80">
-                <div layout="row" class="top-info-project">
-                    <p class="top-info-start-header-people">Scrum Master</p>
-                    <h5 class="top-info-start-date">Julia Koval</h5>
-                    <h5 class="top-info-start-date">Project Manager</h5>
+            <div class="top-info-people">
+                <div>
+                    <p class="top-info-people__role">Product Owner</p>
+                </div>
+                <div>
+                    <div>
+                        <img ng-src="https://material.angularjs.org/latest/img/list/60.jpeg"
+                             class="top-info-people__avatar" alt="Project Ava">
+                    </div>
+                    <div class="top-info-people__title">
+                        <div class="top-info-people__person">
+                            <h5 class="top-info-people__person-name">Ivan Makhina</h5>
+                            <p class="top-info-people__person-role">Director Leadership</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div layout="row" class="top-people-margin all-project">
-            <md-button class="all-project-user" aria-label="All project participants">
-                <h4 class="all-project-user-text">All project participants(3)</h4>
-                <md-tooltip md-visible="false" md-direction="bottom">
-                    Roman Kulinenko, Semen Babenko, Ivan Serevko
-                </md-tooltip>
-            </md-button>
-        </div>
-        <div layout="row" layout-align="center center">
-            <md-button class="button-edit-project">Edit</md-button>
+            <div class="top-info-people">
+                <div>
+                    <p class="top-info-people__role">Scrum Master</p>
+                </div>
+                <div layout="row">
+                    <div>
+                        <img ng-src="https://material.angularjs.org/latest/img/list/60.jpeg"
+                             class="top-info-people__avatar" alt="Project Ava">
+                    </div>
+                    <div class="top-info-people__title">
+                        <div class="top-info-people__person">
+                            <h5 class="top-info-people__person-name">Julia Koval</h5>
+                            <p class="top-info-people__person-role">Project Manager</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="top-info-team">
+                <div>
+                    <p class="top-info-team__title">Team developers (8)</p>
+                </div>
+                <div class="top-info-team__people">
+                    <a class="top-info-team__person" uib-popover-html="personPopover" popover-trigger="'mouseenter'" aria-label="All project participants">
+                        <img src="https://material.angularjs.org/latest/img/list/60.jpeg"
+                             class="top_info-team__person-avatar" alt="Project Ava">
+                    </a>
+                    <a class="top-info-team__person" uib-popover-html="personPopover" popover-trigger="'mouseenter'" aria-label="All project participants">
+                        <img ng-src="https://material.angularjs.org/latest/img/list/60.jpeg"
+                             class="top_info-team__person-avatar" alt="Project Ava">
+                    </a>
+                    <a class="top-info-team__person" uib-popover-html="personPopover" popover-trigger="'mouseenter'" aria-label="All project participants">
+                        <img ng-src="https://material.angularjs.org/latest/img/list/60.jpeg"
+                             class="top_info-team__person-avatar" alt="Project Ava">
+                    </a>
+                    <a class="top-info-team__person" uib-popover-html="personPopover" popover-trigger="'mouseenter'" aria-label="All project participants">
+                        <img ng-src="https://material.angularjs.org/latest/img/list/60.jpeg"
+                             class="top_info-team__person-avatar" alt="Project Ava">
+                    </a>
+                    <a class="top-info-team__person" uib-popover-html="personPopover" popover-trigger="'mouseenter'" aria-label="All project participants">
+                        <img ng-src="https://material.angularjs.org/latest/img/list/60.jpeg"
+                             class="top_info-team__person-avatar" alt="Project Ava">
+                    </a>
+                    <a class="top-info-team__person" uib-popover-html="personPopover" popover-trigger="'mouseenter'" aria-label="All project participants">
+                        <img ng-src="https://material.angularjs.org/latest/img/list/60.jpeg"
+                             class="top_info-team__person-avatar" alt="Project Ava">
+                    </a>
+                    <a class="top-info-team__person" uib-popover-html="personPopover" popover-trigger="'mouseenter'" aria-label="All project participants">
+                        <img ng-src="https://material.angularjs.org/latest/img/list/60.jpeg"
+                             class="top_info-team__person-avatar" alt="Project Ava">
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <button class="info-edit-project-btn">Edit project</button>
+            </div>
         </div>
     </div>
 
-    <div layout="column" class="top-right-column" flex="75">
-        <div layout="row" class="top-right-subcolumn">
-            <div layout="column" flex="100">
-                <div layout="row">
-                    <h3 layout="column" flex="90" class="top-right-subcolumn-header">Timeline</h3>
-                    <h4 layout="column" flex="10" class="top-right-subcolumn-header">2 month</h4>
-                </div>
-            </div>
-        </div>
-        <div layout="row" class="top-right-subcolumn">
-            <div layout="column" flex="100">
-                <div layout="row">
-                    <div layout="column" flex="10">
-                        <div layout="row">
-                            <p class="working-weeks">w1</p>
-                            <md-divider vertical></md-divider>
-                        </div>
-                    </div>
-                    <div layout="column" flex="10">
-                        <div layout="row">
-                            <p class="working-weeks">w2</p>
-                            <md-divider vertical></md-divider>
-                        </div>
-                    </div>
-                    <div layout="column" flex="10">
-                        <div layout="row">
-                            <p class="working-weeks">w3</p>
-                            <md-divider vertical></md-divider>
-                        </div>
-                    </div>
-                    <div layout="column" flex="10">
-                        <div layout="row">
-                            <p class="working-weeks">w4</p>
-                            <md-divider vertical></md-divider>
-                        </div>
-                    </div>
-                    <div layout="column" flex="10">
-                        <div layout="row">
-                            <p class="working-weeks">w5</p>
-                            <md-divider vertical></md-divider>
-                        </div>
-                    </div>
-                    <div layout="column" flex="10">
-                        <div layout="row">
-                            <p class="working-weeks">w6</p>
-                            <md-divider vertical></md-divider>
-                        </div>
-                    </div>
-                    <div layout="column" flex="10">
-                        <div layout="row">
-                            <p class="working-weeks">w7</p>
-                            <md-divider vertical></md-divider>
-                        </div>
-                    </div>
-                    <div layout="column" flex="10">
-                        <div layout="row">
-                            <p class="working-weeks">w8</p>
-                            <md-divider vertical></md-divider>
-                        </div>
-                    </div>
-                    <div layout="column" flex="10">
-                        <div layout="row">
-                            <p class="working-weeks">w9</p>
-                            <md-divider vertical></md-divider>
-                        </div>
-                    </div>
-                    <div layout="column" flex="10">
-                        <div layout="row">
-                            <p class="working-weeks">w10</p>
-                            <md-divider vertical></md-divider>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div layout="row" class="top-right-subcolumn">
-            <div layout="column" flex="100">
-                <div layout="row">
-                    <h4>Project Manager</h4>
-                </div>
-            </div>
-        </div>
-        <div layout="row" class="top-right-subcolumn">
-            <div layout="column" flex="100">
-                <div layout="row">
-                    <h4>Designer</h4>
-                </div>
-            </div>
-        </div>
-        <div layout="row" class="top-right-subcolumn">
-            <div layout="column" flex="100">
-                <div layout="row">
-                    <h4>Front-End developers</h4>
-                </div>
-            </div>
-        </div>
-        <div layout="row" class="top-right-subcolumn">
-            <div layout="column" flex="100">
-                <div layout="row">
-                    <h4>Softwear developers</h4>
-                </div>
-            </div>
-        </div>
-        <div layout="row" class="top-right-subcolumn">
-            <div layout="column" flex="100">
-                <div layout="row">
-                    <h4>Back-end developers</h4>
-                </div>
-            </div>
-        </div>
-        <div layout="row" class="top-right-subcolumn">
-            <div layout="column" flex="100">
-                <div layout="row">
-                    <h4>Mobile developers</h4>
-                </div>
-            </div>
-        </div>
-        <div layout="row" >
-            <div layout="column" class="top-right-right-subcolumn" flex="50">
-                <div layout="row">
-                    <h3 layout="column" flex="90" class="top-right-subcolumn-header">Brief description</h3>
-                    <md-button layout="column" flex="10" layout-align="center center" aria-label="Open demo menu" class="md-icon-button edit-button" ng-click="controlDescription($event)">
-                        <ng-md-icon icon="{{icon_description}}" size="28"></ng-md-icon>
-                    </md-button>
-                </div>
+    <div class="top-right-column col-lg-8">
 
-                <md-input-container class="md-block top-right-subcolumn-main-text">
-                    <textarea ng-model="project.description" ng-disabled="lock_description" md-maxlength="150" rows="5" md-select-on-focus></textarea>
-                </md-input-container>
-                <!--<p class="top-right-subcolumn-main-text"></p>-->
-            </div>
-            <div layout="column" class="top-right-left-subcolumn" flex="50">
-                <div layout="row">
-                    <h3 layout="column" flex="90" class="top-right-subcolumn-header">Technologies & platforms</h3>
-                    <md-button layout="column" flex="10" layout-align="center center" aria-label="Open demo menu" class="md-icon-button edit-button" ng-click="controlTechnology($event)">
-                        <ng-md-icon icon="{{icon_technology}}" size="28"></ng-md-icon>
-                    </md-button>
-                </div>
-                <div layout="row" class="technology">
-                    <md-chips flex-gt-sm="100" ng-model="projectInfo.selectedVegetables" md-autocomplete-snap="" md-transform-chip="projectInfo.transformChip($chip)" md-require-match="projectInfo.autocompleteDemoRequireMatch">
-                        <md-autocomplete ng-disabled="lock_technology" md-selected-item="projectInfo.selectedItem" md-search-text="projectInfo.searchText" md-items="item in projectInfo.querySearch(projectInfo.searchText)" md-item-text="item.name" placeholder="Technology and platforms">
-                            <span md-highlight-text="projectInfo.searchText">{{item.name}} :: {{item.type}}</span>
-                            <md-not-found>
-                                <div class="chip-not-found" ng-click="projectInfo.notFound(projectInfo.searchText)">Not found. Click here to add new.</div>
-                            </md-not-found>
-                        </md-autocomplete>
-                        <md-chip-template ng-disabled="lock_technology">
-                            <span>
-                              <strong>{{$chip.name}}</strong>
-                              <em>({{$chip.type}})</em>
-                            </span>
-                        </md-chip-template>
-                    </md-chips>
+        <!--CREATE TIMELINE BOARD-->
+        <!--<div class="timeline-board">
+            <div class="top-right-subcolumn">
+                <div>
+                    <div>
+                        <p class="top-right-subcolumn-header">Timeline</p>
+                    </div>
                 </div>
             </div>
+            <div class="col-md-12 add-timeline-wraper">
+                <div class="add-timeline-item"><p>+Add</p></div>
+            </div>
+            <div class="create-timeline-board">
+                <div>
+                    <div class="">
+                        <button class="create-board-btn add-timeline-btn-wrapper">Create board</button>
+                    </div>
+                    <div>
+                        <p class="board-info-date">Enter date of Deadline for create Timeline board</p>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <!--CREATE TIMELINE BOARD-->
+
+        <!--EDIT TIMELINE BOARD-->
+        <div class="timeline-board">
+            <div class="top-right-subcolumn">
+                <div class="timeline">
+                    <div class="timeline__header">
+                        <p class="top-right-subcolumn-header timeline__header-title">Timeline</p>
+                        <!--<small class="board-info-date timeline__header-dateinfo">(2 months)</small>-->
+                    </div>
+                    <div class="timeline__duration clearfix">
+                        <div class="timeline__week">W1</div>
+                        <div class="timeline__week">W2</div>
+                        <div class="timeline__week">W3</div>
+                        <div class="timeline__week">W4</div>
+                        <div class="timeline__week">W5</div>
+                        <div class="timeline__week">W6</div>
+                        <div class="timeline__week">W7</div>
+                        <div class="timeline__week">W8</div>
+                    </div>
+                    <div class="col-md-12 add-timeline-wraper"> <!--Adding estimation-->
+                        <div class="add-timeline-item add-timeline-item__finish col-md-12">
+                            <div class="add-timeline-item__discr col-md-11 ">
+                                <p>Project Manager</p>
+                                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                        <div class="add-timeline-item add-timeline-item__added col-md-12">
+                            <div class="add-timeline-item__discr col-md-11 ">
+                                <p>Project Manager</p>
+                                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                            </div>
+                            <div class="add-timeline-item__edit-panel col-md-1">
+                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                        <div class="add-timeline-item add-timeline-item__added col-md-12">
+                            <div class="add-timeline-item__discr col-md-11 ">
+                                <p>Project Manager</p>
+                                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                            </div>
+                            <div class="add-timeline-item__edit-panel col-md-1">
+                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                    </div><!--end Adding estimation-->
+
+                    <div class="col-md-12 add-timeline-wraper">
+                        <div class="add-timeline-item"><p>+Add</p></div>
+                    </div>
+                    <!--Edit estimation-->
+                    <div class="subcolumn-header clearfix timeline__estimation-header">
+                        <p class="subcolumn-header__title">Estimation</p>
+                        <div class="subcolumn-header__btn-group">
+                            <button type="button" class="subcolumn-header__btn subcolumn-header__btn--save">
+                                <span class="glyphicon glyphicon-remove subcolumn-header__btn-icon" aria-hidden="true"></span>
+                            </button>
+                            <button type="button" class="subcolumn-header__btn subcolumn-header__btn--cancel">
+                                <span class="glyphicon glyphicon-ok subcolumn-header__btn-icon" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <uib-progressbar max="100" value="40" class="timeline__progressbar-container">
+                        <div class="timeline__progressbar-btn timeline__progressbar-btn--left">
+                            <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                        </div>
+                        <div class="timeline__progressbar-btn timeline__progressbar-btn--right">
+                            <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                        </div>
+                    </uib-progressbar><!--end Edit estimation-->
+                </div>
+                <br>
+                <div class="staff clearfix">
+                    <div class="staff__department">
+                        <div class="staff__title">Department</div>
+                        <!-- Dropdown menu -->
+                        <div class="btn-group staff-dropdown" uib-dropdown is-open="status.isopen">
+                            <button id="single-button" type="button" class="staff-dropdown__btn" uib-dropdown-toggle ng-disabled="disabled">
+                                <div class="staff-dropdown__marker"></div> Project Manager <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                                <li role="menuitem"><a href="#" class="clearfix staff-dropdown__item">
+                                    <div class="staff-dropdown__marker"></div> Project Manager</a></li>
+                                <li role="menuitem"><a href="#" class="clearfix staff-dropdown__item">
+                                    <div class="staff-dropdown__marker"></div>Project Manager</a></li>
+                                <li role="menuitem"><a href="#" class="clearfix staff-dropdown__item">
+                                    <div class="staff-dropdown__marker"></div>Project Manager</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="staff__person">
+                        <div class="staff__title">Participants</div>
+                        <div class="person clearfix">
+                            <div class="person__image">
+                                <img src="https://material.angularjs.org/latest/img/list/60.jpeg"
+                                     class="person__avatar" alt="Project Ava">
+                            </div>
+                            <div class="person__name">Julia <br> Koval</div>
+                            <button type="button" class="person__add-btn">+Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="create-timeline-board"></div>
+        </div>
+        <!--EDIT TIMELINE BOARD-->
+
+        <div class="col-md-12 bottom-subcolumn">
+            <div class="bottom-right-left-subcolumn col-md-6">
+                <div class="bottom-right-left-subcolumn-wrapper col-md-12">
+                    <div class="subcolumn-header clearfix">
+                        <p class="subcolumn-header__title">Technologies & platforms</p>
+                        <!--<div class="subcolumn-header__btn-group">-->
+                            <!--<button type="button" class="subcolumn-header__btn subcolumn-header__btn&#45;&#45;save">-->
+                                <!--<span class="glyphicon glyphicon-remove subcolumn-header__btn-icon" aria-hidden="true"></span>-->
+                            <!--</button>-->
+                            <!--<button type="button" class="subcolumn-header__btn subcolumn-header__btn&#45;&#45;cancel">-->
+                                <!--<span class="glyphicon glyphicon-ok subcolumn-header__btn-icon" aria-hidden="true"></span>-->
+                            <!--</button>-->
+                        <!--</div>-->
+                    </div>
+                    <!--<div class="add-timeline-wraper">-->
+                        <!--<div class="add-timeline-item typed"><p>JavaScript</p><span class="extra">✖</span></div>-->
+                    <!--</div>-->
+                    <!--<div class="add-timeline-wraper">-->
+                        <!--<div class="add-timeline-item typed"><p>Java</p><span class="extra">✖</span></div>-->
+                    <!--</div>-->
+                    <!--<div class="add-timeline-wraper">-->
+                        <!--<div class="add-timeline-item typed"><p>JavaScript</p><span class="extra">✖</span></div>-->
+                    <!--</div>-->
+                    <!--<div class="add-timeline-wraper">-->
+                        <!--<div class="add-timeline-item typed"><p>Php</p><span class="extra">✖</span></div>-->
+                    <!--</div>-->
+                    <!--<div class="add-timeline-wraper">-->
+                        <!--<div class="add-timeline-item typed"><p>JavaScript</p><span class="extra">✖</span></div>-->
+                    <!--</div>-->
+                    <!--<div class="add-timeline-wraper">-->
+                        <!--<div class="add-timeline-item typed"><p>Jenkins</p><span class="extra">✖</span></div>-->
+                    <!--</div>-->
+                    <!--<div class="add-timeline-wraper">-->
+                        <!--<div class="add-timeline-item typed"><p>JavaScript</p><span class="extra">✖</span></div>-->
+                    <!--</div>-->
+                    <!--<div class="add-timeline-wraper">-->
+                        <!--<div class="add-timeline-item typed"><p>Java</p><span class="extra">✖</span></div>-->
+                    <!--</div>-->
+                    <!--<div class="add-timeline-wraper">-->
+                        <!--<div class="add-timeline-item typed"><p>JavaScript</p><span class="extra">✖</span></div>-->
+                    <!--</div>-->
+                    <!--<div class="add-timeline-wraper">-->
+                        <!--<div class="add-timeline-item typed"><p>My SQL</p><span class="extra">✖</span></div>-->
+                    <!--</div>-->
+                    <!--<div class="add-timeline-wraper">-->
+                        <!--<div class="add-timeline-item typed"><p>Java</p><span class="extra">✖</span></div>-->
+                    <!--</div>-->
+                    <!--<div class="add-timeline-wraper">-->
+                        <!--<div class="add-timeline-item typed"><p>Angular</p><span class="extra">✖</span></div>-->
+                    <!--</div>-->
+                    <!--<div class="add-timeline-wraper">-->
+                        <!--<div class="add-timeline-item typed"><p>Java</p><span class="extra">✖</span></div>-->
+                    <!--</div>-->
+                    <!--<div class="add-timeline-wraper">-->
+                        <!--<div class="add-timeline-item typed"><p>JavaScript</p><span class="extra">✖</span></div>-->
+                    <!--</div>-->
+                    <!--<div class="add-timeline-wraper">-->
+                        <!--<div class="add-timeline-item"><p>+Add</p></div>-->
+                    <!--</div>-->
+
+                    <div class="create-techno-board">
+                        <div>
+                            <button class="create-board-btn add-technologies-btn-wrapper">Create board</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--CREATE DESCRIPTION BOARD -->
+            <div class="bottom-right-right-subcolumn col-md-6">
+                <div class="bottom-right-right-subcolumn-wrapper col-md-12">
+                    <div class="subcolumn-header clearfix">
+                        <p class="subcolumn-header__title">Brief description</p>
+                    </div>
+                    <div class="create-brief-board">
+                        <div>
+                            <div>
+                                <button class="create-board-btn add-description-btn-wrapper">Create board</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--CREATE DESCRIPTION BOARD -->
+
+            <!--EDIT DESCRIPTION BOARD-->
+            <!--<div class="bottom-right-right-subcolumn col-md-6">
+                <div class="bottom-right-right-subcolumn-wrapper col-md-12">
+                    <div class="subcolumn-header clearfix">
+                        <p class="subcolumn-header__title">Brief description</p>
+                        <div class="subcolumn-header__btn-group">
+                            <button type="button" class="subcolumn-header__btn subcolumn-header__btn&#45;&#45;save">
+                                <span class="glyphicon glyphicon-remove subcolumn-header__btn-icon" aria-hidden="true"></span>
+                            </button>
+                            <button type="button" class="subcolumn-header__btn subcolumn-header__btn&#45;&#45;cancel">
+                                <span class="glyphicon glyphicon-ok subcolumn-header__btn-icon" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="subcolumn-description">
+                        <textarea class="form-control subcolumn-description__textarea" rows="5"></textarea>
+                    </div>
+                </div>
+            </div>-->
+            <!--EDIT DESCRIPTION BOARD-->
+
+            <!--SHOW DESCRIPTION BOARD-->
+            <!--<div class="bottom-right-right-subcolumn col-md-6">
+                <div class="bottom-right-right-subcolumn-wrapper col-md-12">
+                    <div class="subcolumn-header clearfix">
+                        <p class="subcolumn-header__title">Brief description</p>
+                        <div class="subcolumn-header__btn-group">
+                            <button type="button" class="subcolumn-header__btn subcolumn-header__btn&#45;&#45;edit">
+                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="subcolumn-description">
+                        <p class="subcolumn-description__text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Animi corporis deserunt eaque eos esse fugit magni maxime,
+                            minus molestiae nostrum pariatur perferendis possimus qui
+                            rem sequi tempora temporibus vel voluptate?
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            rem sequi tempora temporibus vel voluptate?
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </p>
+                    </div>
+                </div>
+            </div>-->
+            <!--SHOW DESCRIPTION BOARD-->
         </div>
     </div>
 </div>

@@ -1,0 +1,96 @@
+<div class="project-request">
+<div class="request-menu request-menu-wrapper col-lg-2">
+    <div class="request-menu__title">Requests</div>
+    <div class="btn-group" uib-dropdown is-open="status.isopen">
+        <button type="button" class="request-menu__dropdown-btn" uib-dropdown-toggle>
+            <span>Filter by</span> <span class="request-menu__dropdown-value">Creation date</span> <span class="glyphicon glyphicon-chevron-down caret-icon"></span>
+        </button>
+        <ul class="dropdown-menu request-menu__dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+            <li role="menuitem"><a href="#">Epic link</a></li>
+            <li role="menuitem"><a href="#">Epik status</a></li>
+            <li role="menuitem"><a href="#">Rank</a></li>
+            <li role="menuitem"><a href="#">Sprint</a></li>
+            <li role="menuitem"><a href="#">Story points</a></li>
+            <li role="menuitem"><a href="#">Author</a></li>
+            <li role="menuitem"><a href="#">Votes</a></li>
+            <li role="menuitem"><a href="#">Creation date</a></li>
+            <li role="menuitem"><a href="#">Resolution date</a></li>
+        </ul>
+    </div>
+    <div class="request-menu__tasks">
+        <!--<input type="text" class="request-menu__search">-->
+        <div class="request-menu__search-wrapper">
+            <span class="glyphicon glyphicon-search"></span>
+            <input type="text" class="request-menu__search" placeholder="Search">
+        </div>
+        <div class="request-menu__item">
+            <!--BOARD TASK ITEM COMPONENT-->
+            <div class="board-task board-task__request">
+                <div class="board-task__header">
+                    <span class="glyphicon glyphicon-ok board-task__icon board-task__icon--header" aria-hidden="true"></span>
+                    <div class="board-task__header-title">DEN-3</div>
+                </div>
+                <div class="board-task__task">
+                    <span class="glyphicon glyphicon-arrow-right board-task__icon board-task__icon--task" aria-hidden="true"></span>
+                    <div class="board-task__task-text">Вивчення можливостей інтеграції Skype до CRM</div>
+                </div>
+            </div>
+            <div class="board-task board-task__request">
+                <div class="board-task__header">
+                    <span class="glyphicon glyphicon-ok board-task__icon board-task__icon--header" aria-hidden="true"></span>
+                    <div class="board-task__header-title">DEN-3</div>
+                </div>
+                <div class="board-task__task">
+                    <span class="glyphicon glyphicon-arrow-right board-task__icon board-task__icon--task" aria-hidden="true"></span>
+                    <div class="board-task__task-text">Вивчення можливостей інтеграції Skype до CRM</div>
+                </div>
+            </div>
+            <div class="board-task board-task__request">
+                <div class="board-task__header">
+                    <span class="glyphicon glyphicon-ok board-task__icon board-task__icon--header" aria-hidden="true"></span>
+                    <div class="board-task__header-title">DEN-3</div>
+                </div>
+                <div class="board-task__task">
+                    <span class="glyphicon glyphicon-arrow-right board-task__icon board-task__icon--task" aria-hidden="true"></span>
+                    <div class="board-task__task-text">Вивчення можливостей інтеграції Skype до CRM</div>
+                </div>
+            </div>
+            <div class="board-task board-task__request">
+                <div class="board-task__header">
+                    <span class="glyphicon glyphicon-ok board-task__icon board-task__icon--header" aria-hidden="true"></span>
+                    <div class="board-task__header-title">DEN-3</div>
+                </div>
+                <div class="board-task__task">
+                    <span class="glyphicon glyphicon-arrow-right board-task__icon board-task__icon--task" aria-hidden="true"></span>
+                    <div class="board-task__task-text">Вивчення можливостей інтеграції Skype до CRM</div>
+                </div>
+            </div>
+            <div class="board-task board-task__request">
+                <div class="board-task__header">
+                    <span class="glyphicon glyphicon-ok board-task__icon board-task__icon--header" aria-hidden="true"></span>
+                    <div class="board-task__header-title">DEN-3</div>
+                </div>
+                <div class="board-task__task">
+                    <span class="glyphicon glyphicon-arrow-right board-task__icon board-task__icon--task" aria-hidden="true"></span>
+                    <div class="board-task__task-text">Вивчення можливостей інтеграції Skype до CRM</div>
+                </div>
+            </div>
+            <div class="board-task board-task__request">
+                <div class="board-task__header">
+                    <span class="glyphicon glyphicon-ok board-task__icon board-task__icon--header" aria-hidden="true"></span>
+                    <div class="board-task__header-title">DEN-3</div>
+                </div>
+                <div class="board-task__task">
+                    <span class="glyphicon glyphicon-arrow-right board-task__icon board-task__icon--task" aria-hidden="true"></span>
+                    <div class="board-task__task-text">Вивчення можливостей інтеграції Skype до CRM</div>
+                </div>
+            </div>
+            <!--/BOARD TASK ITEM COMPONENT-->
+        </div>
+    </div>
+    <div class="board-task-pagination-refresh"><span class="glyphicon glyphicon-refresh"></span><span class="board-task-pagination-refresh__discr">Update</span></div>
+    <div ng-controller="PaginationCtrl">
+        <ul uib-pagination boundary-links="false" total-items="totalItems" ng-model="currentPage" class="pagination board-task-pagination" previous-text="&lsaquo;" next-text="&rsaquo;"></ul>
+    </div>
+</div>
+</div>

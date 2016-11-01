@@ -1,0 +1,43 @@
+.project-tasks {
+  font-family: Lato, serif;
+  margin: 15px 0 0;
+  padding-right: 15px;
+  color: #a3a7ac;
+  .left-menu-panel {
+    .button-project {
+      background-color: $green;
+      color: $white;
+      border: none;
+      width: 260px;
+      height: 40px;
+      border-radius: 5px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      outline: none;
+    }
+  }
+  .left-menu-panel-select-board {
+    background-color: white;
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.14);
+  }
+
+  .panel-heading {
+    color: inherit;
+    background-color: inherit;
+    text-decoration: none;
+  }
+  .panel-group .panel-heading + .panel-collapse > .panel-body {
+    border-top: none;
+  }
+  .accordion-toggle {
+    text-decoration: none;
+  }
+  .accordion-toggle:hover {
+    text-decoration: none;
+  }
+
+  .btn-group.open .dropdown-toggle {
+    box-shadow: none;
+  }
+
+}

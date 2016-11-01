@@ -6,6 +6,7 @@ app.controller('CreateTaskController', function ($scope, serverService, taskServ
 
     taskService.getPriorities().then(function (response) {
         $scope.priorities = response;
+        console.log($scope.priorities);
     });
     $scope.labels = [];
 
@@ -118,6 +119,7 @@ app.controller('CreateTaskController', function ($scope, serverService, taskServ
 //        TODO: change format to localDateTime
 //        $scope.task.dueDate = moment($scope.task.endDate).format(formats.date);
         taskService.saveTask($scope.task);
+        console.log("new Task!!!!", $scope.task);
         $mdDialog.hide(answer);
     };
 });

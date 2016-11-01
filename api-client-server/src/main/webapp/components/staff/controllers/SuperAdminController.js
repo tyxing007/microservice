@@ -11,9 +11,8 @@ app
 
         //The method that sends to the server email user and type.
         $scope.sendToEmail = function (email, type){
-            return userService.sendToEmail(email, type).then(function (user) {
+            userService.sendToEmail(email, type).then(function (user) {
                 $scope.successfullySend = "Message sent successfully to " + user.data['email'];
-                return user.data;
             })
         }
 

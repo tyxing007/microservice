@@ -1,79 +1,198 @@
-<div layout="column" class="top-sprint-filters" flex="85">
-    <div layout="row">
-        <div layout="column" flex="10" class="md-list-item-text">
-            <h3 class="task-status">DEN Sprint 1</h3>
+<div class="active-sprint">
+<div class="col-lg-10 sprint-board">
+
+
+    <div class="sprint-board-header col-lg-12">
+        <div class="sprint-board-header-title">
+            <span>DEN Sprint 1</span>
         </div>
-        <div layout="column" flex="10" >
-            <md-input-container class="md-block select-filter" flex-gt-sm="100">
-                <md-select ng-model="project.filter">
-                    <md-option ng-repeat="filter in filters" value="{{filter.projects}}">
-                        {{filter.projects}}
-                    </md-option>
-                </md-select>
-            </md-input-container>
+        <div class="sprint-board-header-filters">
+            <span>Filters</span>
+            <div class="sprint-board-header-filters__item">
+                <span>Only my requests</span>
+            </div>
+            <div class="sprint-board-header-filters__item">
+                <span>Recently added</span>
+            </div>
         </div>
-        <div layout="column" flex="80">
-            <div layout="row" layout-align="end center">
-                <div layout="column" layout-align="end end" flex="5">
-                    <ng-md-icon icon="query_builder" class="icon-remain" size="28"></ng-md-icon>
-                </div>
-                <div layout="column" flex="10">
-                    <h4 class="roject-remains">Remains: 6d.</h4>
-                </div>
-                <div layout="column" flex="5">
-                    <md-menu md-offset="0 -7">
-                        <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
-                            <ng-md-icon icon="more_vert" class="menu-more" size="28"></ng-md-icon>
-                        </md-button>
-                        <md-menu-content width="4">
-                            <md-menu-item ng-repeat="item in [1, 2, 3]">
-                                <md-button> <span md-menu-align-target>Option</span> {{item}} </md-button>
-                            </md-menu-item>
-                        </md-menu-content>
-                    </md-menu>
-                </div>
+        <div class="sprint-board-header-remains">
+            <span class="glyphicon glyphicon-time"></span>
+            <span>Remains: 6 d.</span>
+            <div class="btn-group" uib-dropdown is-open="status.isopen">
+                <span class="glyphicon glyphicon-option-vertical sprint-board-more-option-btn" uib-dropdown-toggle></span>
+                <ul class="dropdown-menu sprint-board-header-dropdown" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                    <li role="menuitem"><a href="#">Setting</a></li>
+                    <li role="menuitem"><a href="#">Copy</a></li>
+                    <li class="divider"></li>
+                    <li role="menuitem"><a href="#">Create board</a></li>
+                    <li class="divider"></li>
+                    <li role="menuitem"><a href="#">Collapse all swimlines</a></li>
+                    <li role="menuitem"><a href="#">Hide epic lables</a></li>
+                    <li role="menuitem"><a href="#">Print cards</a></li>
+                </ul>
             </div>
         </div>
     </div>
-    <md-divider></md-divider>
-    <div layout="column" flex layout-fill ng-cloak>
-        <md-toolbar md-scroll-shrink>
-            <div layout="row">
-                <div layout="column" flex="flexColumn" class="md-list-item-text" ng-repeat="column in columns">
-                    <h4 class="task-status">{{column.name}}</h4>
-                </div>
-            </div>
-        </md-toolbar>
-        <md-content class="main-content">
-            <section ng-repeat="story in stories">
-                <md-subheader>{{story.name}}</md-subheader>
-                <md-list layout-padding>
-                    <md-list-item class="item md-3-line" ng-repeat="row in story.rows">
-                        <div layout="row">
-                            <div layout="column" flex="25" ng-repeat="message in row.columns" dragula-model="story.rows">
-                                <div dragula='"first-bag"' class="top-task">
-                                    <div layout="column" flex="100" class="md-list-item-text">
-                                        <div class="grab-item" layout="row">
-                                            <div layout="column" flex="80">
-                                                <div layout="row">
-                                                    <h3>DEN-3</h3>
-                                                </div>
-                                                <div layout="row" class="task-description">
-                                                    <h4>{{message.title}}</h4>
-                                                </div>
-                                            </div>
-                                            <div layout="column" flex="20">
-                                                <img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
-                                                <img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+    <div class="status-header">
+        <ul class="status-header__item-wrapper">
+            <li class="status-header__item">To implement(9)</li>
+            <li class="status-header__item">In progress(15)</li>
+            <li class="status-header__item">Ready to test(3)</li>
+            <li class="status-header__item">Done(14)</li>
+        </ul>
+    </div>
+    <uib-accordion close-others="oneAtATime" class="task-accordition">
+        <div uib-accordion-group class="panel-default" is-open="status.open">
+            <uib-accordion-heading>
+                <i class="pull-left glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                <span class="glyphicon glyphicon-align-left task-accordition__backlog-icon" aria-hidden="true"></span>
+                <span class="task-accordition__task-lable">DEN-2</span>
+                <span class="task-accordition__task-title">Как суперадмин хочу просматривать все разговоры менеджеров</span>
+                <span class="task-accordition__task-number">(7 sub-tasks)</span>
+            </uib-accordion-heading>
+            <div class="task-panel">
+                <div class="row">
+                    <div class="col-lg-2 task-panel__item">
+                        <!--BOARD TASK ITEM COMPONENT-->
+                        <div class="board-task">
+                            <div class="board-task__header">
+                                <span class="glyphicon glyphicon-ok board-task__icon board-task__icon--header" aria-hidden="true"></span>
+                                <div class="board-task__header-title">DEN-3</div>
                             </div>
+                            <div class="board-task__task">
+                                <span class="glyphicon glyphicon-arrow-right board-task__icon board-task__icon--task" aria-hidden="true"></span>
+                                <div class="board-task__task-text">Вивчення можливостей інтеграції Skype до CRM</div>
+                            </div>
+                            <img src="https://material.angularjs.org/latest/img/list/60.jpeg"
+                                 class="board-task__avatar" alt="Project Ava">
                         </div>
-                    </md-list-item>
-                </md-list>
-            </section>
-        </md-content>
-    </div>
+                        <!--/BOARD TASK ITEM COMPONENT-->
+
+                        <!--BOARD TASK ITEM COMPONENT-->
+                        <div class="board-task">
+                            <div class="board-task__header">
+                                <span class="glyphicon glyphicon-ok board-task__icon board-task__icon--header" aria-hidden="true"></span>
+                                <div class="board-task__header-title">DEN-3</div>
+                            </div>
+                            <div class="board-task__task">
+                                <span class="glyphicon glyphicon-arrow-right board-task__icon board-task__icon--task" aria-hidden="true"></span>
+                                <div class="board-task__task-text">Вивчення можливостей інтеграції Skype до CRM</div>
+                            </div>
+                            <img src="https://material.angularjs.org/latest/img/list/60.jpeg"
+                                 class="board-task__avatar" alt="Project Ava">
+                        </div>
+                        <!--/BOARD TASK ITEM COMPONENT-->
+
+                        <!--BOARD TASK ITEM COMPONENT-->
+                        <div class="board-task">
+                            <div class="board-task__header">
+                                <span class="glyphicon glyphicon-ok board-task__icon board-task__icon--header" aria-hidden="true"></span>
+                                <div class="board-task__header-title">DEN-3</div>
+                            </div>
+                            <div class="board-task__task">
+                                <span class="glyphicon glyphicon-arrow-right board-task__icon board-task__icon--task" aria-hidden="true"></span>
+                                <div class="board-task__task-text">Вивчення можливостей інтеграції Skype до CRM</div>
+                            </div>
+                            <img src="https://material.angularjs.org/latest/img/list/60.jpeg"
+                                 class="board-task__avatar" alt="Project Ava">
+                        </div>
+                        <!--/BOARD TASK ITEM COMPONENT-->
+                    </div>
+                    <div class="col-lg-2  task-panel__item">
+                        <!--BOARD TASK ITEM COMPONENT-->
+                        <div class="board-task">
+                            <div class="board-task__header">
+                                <span class="glyphicon glyphicon-ok board-task__icon board-task__icon--header" aria-hidden="true"></span>
+                                <div class="board-task__header-title">DEN-3</div>
+                            </div>
+                            <div class="board-task__task">
+                                <span class="glyphicon glyphicon-arrow-right board-task__icon board-task__icon--task" aria-hidden="true"></span>
+                                <div class="board-task__task-text">Вивчення можливостей інтеграції Skype до CRM</div>
+                            </div>
+                            <img src="https://material.angularjs.org/latest/img/list/60.jpeg"
+                                 class="board-task__avatar" alt="Project Ava">
+                        </div>
+                        <!--/BOARD TASK ITEM COMPONENT-->
+                    </div>
+                    <div class="col-lg-2  task-panel__item">
+                        <!--BOARD TASK ITEM COMPONENT-->
+                        <div class="board-task">
+                            <div class="board-task__header">
+                                <span class="glyphicon glyphicon-ok board-task__icon board-task__icon--header" aria-hidden="true"></span>
+                                <div class="board-task__header-title">DEN-3</div>
+                            </div>
+                            <div class="board-task__task">
+                                <span class="glyphicon glyphicon-arrow-right board-task__icon board-task__icon--task" aria-hidden="true"></span>
+                                <div class="board-task__task-text">Вивчення можливостей інтеграції Skype до CRM</div>
+                            </div>
+                            <img src="https://material.angularjs.org/latest/img/list/60.jpeg"
+                                 class="board-task__avatar" alt="Project Ava">
+                        </div>
+                        <!--/BOARD TASK ITEM COMPONENT-->
+                    </div>
+                    <div class="col-lg-2  task-panel__item">
+                        <!--BOARD TASK ITEM COMPONENT-->
+                        <div class="board-task">
+                            <div class="board-task__header">
+                                <span class="glyphicon glyphicon-ok board-task__icon board-task__icon--header" aria-hidden="true"></span>
+                                <div class="board-task__header-title">DEN-3</div>
+                            </div>
+                            <div class="board-task__task">
+                                <span class="glyphicon glyphicon-arrow-right board-task__icon board-task__icon--task" aria-hidden="true"></span>
+                                <div class="board-task__task-text">Вивчення можливостей інтеграції Skype до CRM</div>
+                            </div>
+                            <img src="https://material.angularjs.org/latest/img/list/60.jpeg"
+                                 class="board-task__avatar" alt="Project Ava">
+                        </div>
+                        <!--/BOARD TASK ITEM COMPONENT-->
+                        <!--BOARD TASK ITEM COMPONENT-->
+                        <div class="board-task">
+                            <div class="board-task__header">
+                                <span class="glyphicon glyphicon-ok board-task__icon board-task__icon--header" aria-hidden="true"></span>
+                                <div class="board-task__header-title">DEN-3</div>
+                            </div>
+                            <div class="board-task__task">
+                                <span class="glyphicon glyphicon-arrow-right board-task__icon board-task__icon--task" aria-hidden="true"></span>
+                                <div class="board-task__task-text">Вивчення можливостей інтеграції Skype до CRM</div>
+                            </div>
+                            <img src="https://material.angularjs.org/latest/img/list/60.jpeg"
+                                 class="board-task__avatar" alt="Project Ava">
+                        </div>
+                        <!--/BOARD TASK ITEM COMPONENT-->
+                    </div>
+                    <div class="col-lg-2  task-panel__item">
+                        <!--BOARD TASK ITEM COMPONENT-->
+                        <div class="board-task">
+                            <div class="board-task__header">
+                                <span class="glyphicon glyphicon-ok board-task__icon board-task__icon--header" aria-hidden="true"></span>
+                                <div class="board-task__header-title">DEN-3</div>
+                            </div>
+                            <div class="board-task__task">
+                                <span class="glyphicon glyphicon-arrow-right board-task__icon board-task__icon--task" aria-hidden="true"></span>
+                                <div class="board-task__task-text">Вивчення можливостей інтеграції Skype до CRM</div>
+                            </div>
+                            <img src="https://material.angularjs.org/latest/img/list/60.jpeg"
+                                 class="board-task__avatar" alt="Project Ava">
+                        </div>
+                        <!--/BOARD TASK ITEM COMPONENT-->
+                        <!--BOARD TASK ITEM COMPONENT-->
+                        <div class="board-task">
+                            <div class="board-task__header">
+                                <span class="glyphicon glyphicon-ok board-task__icon board-task__icon--header" aria-hidden="true"></span>
+                                <div class="board-task__header-title">DEN-3</div>
+                            </div>
+                            <div class="board-task__task">
+                                <span class="glyphicon glyphicon-arrow-right board-task__icon board-task__icon--task" aria-hidden="true"></span>
+                                <div class="board-task__task-text">Вивчення можливостей інтеграції Skype до CRM</div>
+                            </div>
+                            <img src="https://material.angularjs.org/latest/img/list/60.jpeg"
+                                 class="board-task__avatar" alt="Project Ava">
+                        </div>
+                        <!--/BOARD TASK ITEM COMPONENT-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </uib-accordion>
+</div>
 </div>

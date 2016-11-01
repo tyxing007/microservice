@@ -4,7 +4,7 @@
  * @author Andrii Blyznuk
  */
 app
-    .controller('ModalEditVacancyController', function ($rootScope, $scope, vacancyService, VacancyTypeEnum, $mdDialog, autocompleteService, data) {
+    .controller('ModalEditVacancyController', function ($scope, vacancyService, VacancyTypeEnum, $mdDialog, autocompleteService, data) {
 
 
         $scope.getAutocompleteData = autocompleteService.getAutocompleteDataFromServer;
@@ -36,15 +36,10 @@ app
             }
         };
 
-        $scope.saveVacancy = function () {
-            var response = vacancyService.createVacancy($scope.newVacancy).then(function (answer) {
-                $rootScope.$broadcast("EditVacancyStaff", answer.data);
-                return answer;
-            });
+        $scope.saveVacansy = function () {
+            vacancyService.createVacancy($scope.newVacancy);
             $mdDialog.cancel();
-            return response;
         };
-
 
         $scope.cancel = function() {
             $mdDialog.cancel();

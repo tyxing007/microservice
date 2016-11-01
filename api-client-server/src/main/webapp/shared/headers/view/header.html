@@ -1,127 +1,271 @@
-<div flexl layout="row">
+<div class="header-nav-bar">
     <!-- Container #2 -->
-    <md-sidenav flex=5 md-is-locked-open="true" class="nav">
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <div class="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand" ui-sref="app.main">
+                    <a href="#">
+                        Dengo <span>Systems</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span><br>Dashboard</a>
+                </li>
+                <li ui-sref="app.projects.task.backlog">
+                    <a href="#"><span class="glyphicon glyphicon-file" aria-hidden="true"></span><br>Projects</a>
+                </li>
+                <li>
+                    <a href="#"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><br>Calendar</a>
+                </li>
+                <li>
+                    <a href="#"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span><br>Chat</a>
+                </li>
+                <li ui-sref="app.staff.navBar.people">
+                    <a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span><br>Staff</a>
+                </li>
+                <li>
+                    <a href="#"><span class="glyphicon glyphicon-cloud" aria-hidden="true"></span><br>Cloud</a>
+                </li>
+                <li>
+                    <a href="#"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span><br>Contact</a>
+                </li>
+                <li>
+                    <a href="#"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span><br>Settings</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 
-        <md-list>
-            <md-list-item class="nav-all" ui-sref="app.main">
-                    <span class="title">Dengo
-                        <span class="title-text">service 24</span>
-                    </span>
-            </md-list-item>
+    <!-- /#sidebar-wrapper -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="container">
+            <input type="checkbox" id="navbar-toggle-cbox">
+            <label for="navbar-toggle-cbox" class="navbar-toggle"
+                   ng-init="navCollapsed = true"
+                   ng-click="navCollapsed = !navCollapsed"
+                   aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </label>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" collapse="navCollapsed" ng-class="{'in':!navCollapsed}">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-btn">
+							<button type="reset" class="btn btn-default btn-search">
+								<span class="glyphicon glyphicon-remove">
+									<span class="sr-only">Close</span>
+								</span>
+							</button>
+							<button type="submit" class="btn btn-default btn-search">
+								<span class="glyphicon glyphicon-search">
+									<span class="sr-only">Search</span>
+								</span>
+							</button>
+						</span>
+                    </div>
+                </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li uib-dropdown>
+                    <div class="btn-group" uib-dropdown dropdown-append-to-body>
+                        <button type="button" class="btn dropdown-toggle" uib-dropdown-toggle>
+                            +Add <span class="glyphicon glyphicon-chevron-down"></span>
+                        </button>
+                        <ul class="dropdown-menu" uib-dropdown-menu role="menu">
+                            <li role="menuitem"><a href="#">Action</a></li>
+                            <li role="menuitem"><a href="#">Another action</a></li>
+                            <li role="menuitem"><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li role="menuitem"><a href="#">Separated link</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="time-switch">
+                    <toggle-switch
+                            ng-model="htmlSwitchStatus"
+                            class="switch-primary"
+                            knob-label=""
+                            on-label="7:30"
+                            off-label="7:30">
+                    </toggle-switch>
+                </li>
+                <li>
+                    <a class="navbar-brand" href="#">
+                        <img src="image/icon.png">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
+    <!--<md-sidenav md-is-locked-open="true" class="nav">-->
 
-            <md-list-item class="nav-all">
-                <ng-md-icon icon="home" size="28"></ng-md-icon>
-                <div class="nav-text">Dashboard</div>
-            </md-list-item>
+        <!--<md-list>-->
+            <!--<md-list-item class="nav-all" ui-sref="app.main">-->
+                <!--<header class="navbar-title">-->
+                    <!--<span class="title">Dengo-->
+                        <!--<span class="title-text">service</span>-->
+                    <!--</span>-->
+                <!--</header>-->
+            <!--</md-list-item>-->
 
-            <md-list-item class="nav-all" ui-sref="app.projects">
-                <ng-md-icon icon="insert_drive_file" size="28"></ng-md-icon>
-                <div class="nav-text">Projects</div>
-            </md-list-item>
+            <!--<md-list-item class="nav-all">-->
+                <!--<ng-md-icon icon="home" size="28"></ng-md-icon>-->
+                <!--<div class="nav-text">Dashboard</div>-->
+            <!--</md-list-item>-->
 
-            <md-list-item class="nav-all">
-                <ng-md-icon icon="date_range" size="28"></ng-md-icon>
-                <div class="nav-text">Calendar</div>
-            </md-list-item>
+            <!--<md-list-item class="nav-all" ui-sref="app.projects">-->
+                <!--<ng-md-icon icon="insert_drive_file" size="28"></ng-md-icon>-->
+                <!--<div class="nav-text">Projects</div>-->
+            <!--</md-list-item>-->
 
-            <md-list-item class="nav-all">
-                <ng-md-icon icon="textsms" size="28"></ng-md-icon>
-                <div class="nav-text">Chat</div>
-            </md-list-item>
+            <!--<md-list-item class="nav-all">-->
+                <!--<ng-md-icon icon="date_range" size="28"></ng-md-icon>-->
+                <!--<div class="nav-text">Calendar</div>-->
+            <!--</md-list-item>-->
 
-            <md-list-item class="nav-all" ui-sref="app.staff.navBar.people">
-                <ng-md-icon icon="supervisor_account" size="28"></ng-md-icon>
-                <div class="nav-text">Staffs</div>
-            </md-list-item>
+            <!--<md-list-item class="nav-all">-->
+                <!--<ng-md-icon icon="textsms" size="28"></ng-md-icon>-->
+                <!--<div class="nav-text">Chat</div>-->
+            <!--</md-list-item>-->
 
-            <md-list-item class="nav-all">
-                <ng-md-icon icon="cloud_upload" size="28"></ng-md-icon>
-                <div class="nav-text">Cloud</div>
-            </md-list-item>
+            <!--<md-list-item class="nav-all" ui-sref="app.staff.navBar.people">-->
+                <!--<ng-md-icon icon="supervisor_account" size="28"></ng-md-icon>-->
+                <!--<div class="nav-text">Staffs</div>-->
+            <!--</md-list-item>-->
 
-            <md-list-item class="nav-all">
-                <ng-md-icon icon="data_usage" size="28"></ng-md-icon>
-                <div class="nav-text">Statistic</div>
-            </md-list-item>
+            <!--<md-list-item class="nav-all">-->
+                <!--<ng-md-icon icon="cloud_upload" size="28"></ng-md-icon>-->
+                <!--<div class="nav-text">Cloud</div>-->
+            <!--</md-list-item>-->
 
-            <div class="settings">
-                <md-list-item class="nav-all">
-                    <ng-md-icon icon="settings" size="28"></ng-md-icon>
-                    <div class="nav-text">Settings</div>
-                </md-list-item>
-            </div>
-        </md-list>
+            <!--<md-list-item class="nav-all">-->
+                <!--<ng-md-icon icon="data_usage" size="28"></ng-md-icon>-->
+                <!--<div class="nav-text">Statistic</div>-->
+            <!--</md-list-item>-->
 
-    </md-sidenav>
+            <!--<md-list-item class="nav-all settings">-->
+                <!--<ng-md-icon icon="settings" size="28"></ng-md-icon>-->
+                <!--<div class="nav-text">Settings</div>-->
+            <!--</md-list-item>-->
+        <!--</md-list>-->
+
+    <!--</md-sidenav>-->
 
     <!-- Container #3 -->
-    <md-content ng-controller="HeaderController" class="content" flex id="content">
-        <md-toolbar layout="row" >
+    <div ng-controller="HeaderController" class="content" id="content">
+        <!--<md-toolbar layout="row" class="top-toolbar">-->
+            <!--<div class="search" layout="row" layout-align="start center">-->
+                <!--&lt;!&ndash;<md-input-container class="md-icon-float md-block">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<ng-md-icon class="search" icon="search" size="28"></ng-md-icon>&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<label>Search</label>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="md-placeholder">Search</div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<input ng-model="user.name" type="text">&ndash;&gt;-->
+                <!--&lt;!&ndash;</md-input-container>&ndash;&gt;-->
 
-            <md-input-container class="md-icon-float md-block">
-                <ng-md-icon class="search" icon="search" size="28"></ng-md-icon>
-                <label>Search</label>
-                <input ng-model="user.name" type="text">
+                <!--<div layout="column" ng-controller="AppCtrl">-->
+                    <!--<md-toolbar ng-show="!showSearch">-->
+                        <!--<div class="md-toolbar-tools search-icon">-->
+                            <!--<md-button aria-label="Search" ng-click="showSearch = !showSearch">-->
+                                <!--<ng-md-icon icon="search"></ng-md-icon>-->
+                            <!--</md-button>-->
+                        <!--</div>-->
+                    <!--</md-toolbar>-->
+                    <!--<md-toolbar ng-show="showSearch">-->
+                        <!--<div class="md-toolbar-tools">-->
+                            <!--<md-input-container flex>-->
+                                <!--<label>&nbsp;</label>-->
+                                <!--<input placeholder="Search">-->
+                            <!--</md-input-container>-->
 
-            </md-input-container>
-            <div class="user">
-                <img ng-click="toggleRight()" ng-hide="isOpenRight()" src="image/icon.png"/>
-                <span class="timer">03:47</span>
-            </div>
-        </md-toolbar>
+                            <!--<md-button ng-click="showSearch = !showSearch" aria-label="search close">-->
+                                <!--<ng-md-icon icon="close"></ng-md-icon>-->
+                            <!--</md-button>-->
+                        <!--</div>-->
+                    <!--</md-toolbar>-->
+                <!--</div>-->
+            <!--</div>-->
 
-        <md-grid-list md-cols-xs="1" md-cols-sm="1" md-cols-md="4" md-cols-gt-md="4" md-row-height-gt-md="7:6" md-row-height="5:3" md-gutter="15px" md-gutter-gt-sm="15px">
+            <!--<div class="user" layout="row" layout-align="end center">-->
+                <!--<div>-->
+                <!--<md-button class="md-primary dropdown" ng-click="myDropdownIsActive=!myDropdownIsActive" ng-class="{active:myDropdownIsActive}">-->
+                    <!--+Add   <span><ng-md-icon icon="expand_more"></ng-md-icon></span>-->
+                    <!--<ul class="dropdown-menu md-whiteframe-z1">-->
+                        <!--<li><md-button>Something</md-button></li>-->
+                        <!--<li><md-button>Something else</md-button></li>-->
+                    <!--</ul>-->
+                <!--</md-button>-->
+                <!--</div>-->
+                <!--<div class="time-switch-wrap">-->
+                    <!--<md-switch md-no-ink class="md-primary time-switch" aria-label="Time switch">-->
+                    <!--</md-switch>-->
+                <!--</div>-->
+                <!--<div class="user-avatar">-->
+                    <!--<img ng-click="toggleRight()" ng-hide="isOpenRight()" src="image/icon.png"/>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</md-toolbar>-->
+        <!--<md-grid-list md-cols-xs="1" md-cols-sm="1" md-cols-md="4" md-cols-gt-md="4" md-row-height-gt-md="7:6" md-row-height="5:3" md-gutter="15px" md-gutter-gt-sm="15px">-->
 
-            <md-grid-tile class="white" md-rowspan="2" md-colspan="4" md-colspan-sm="1" md-colspan-xs="1">
-                <ui-view></ui-view>
-            </md-grid-tile>
+            <!--<md-grid-tile class="white" md-rowspan="2" md-colspan="4" md-colspan-sm="1" md-colspan-xs="1">-->
+        <div ui-view class="all-content">
+        <!--<ui-view></ui-view>-->
+        </div>
+            <!--</md-grid-tile>-->
 
-        </md-grid-list>
-
-    </md-content>
+        <!--</md-grid-list>-->
 
 
-    <md-sidenav class="md-sidenav-right" md-component-id="right">
-        <md-content ng-controller="EventController" layout-padding>
+    </div>
 
-            <md-list-item class="nav-text-right">
-                <div class="nav-text--right">+ Add</div>
-            </md-list-item>
 
-            <md-list-item class="nav-text-right">
-                <div class="nav-text--right">My account</div>
-            </md-list-item>
+    <!--<md-sidenav class="md-sidenav-right" md-component-id="right">-->
+        <!--<md-content ng-controller="EventController" layout-padding>-->
 
-            <md-list-item class="nav-text-right">
-                <div class="nav-text--right">Edit account</div>
-            </md-list-item>
+            <!--<md-list-item class="nav-text-right">-->
+                <!--<div class="nav-text&#45;&#45;right">+ Add</div>-->
+            <!--</md-list-item>-->
 
-            <md-list-item class="nav-text-right">
-                <div class="nav-text--right">Accounting</div>
-            </md-list-item>
+            <!--<md-list-item class="nav-text-right">-->
+                <!--<div class="nav-text&#45;&#45;right">My account</div>-->
+            <!--</md-list-item>-->
 
-            <md-list-item class="nav-text-right">
-                <div class="nav-text--right">Inventory</div>
-            </md-list-item>
+            <!--<md-list-item class="nav-text-right">-->
+                <!--<div class="nav-text&#45;&#45;right">Edit account</div>-->
+            <!--</md-list-item>-->
 
-            <md-list-item class="nav-text-right">
-                <div class="nav-text--right logout">Log out</div>
-            </md-list-item>stu
-            <hr>
+            <!--<md-list-item class="nav-text-right">-->
+                <!--<div class="nav-text&#45;&#45;right">Accounting</div>-->
+            <!--</md-list-item>-->
 
-            <div class="notification-title">
-                Notifications
-            </div>
-            <div class="notification">
-                <div class="notification-block">
-                    <ng-md-icon class="clear" icon="clear"></ng-md-icon>
-                    Notifications card
-                </div>
-                <div class="notification-block">
-                    <ng-md-icon class="clear" icon="clear"></ng-md-icon>
-                    Notifications card
-                </div>
-            </div>
-        </md-content>
-    </md-sidenav>
+            <!--<md-list-item class="nav-text-right">-->
+                <!--<div class="nav-text&#45;&#45;right">Inventory</div>-->
+            <!--</md-list-item>-->
+
+            <!--<md-list-item class="nav-text-right">-->
+                <!--<div class="nav-text&#45;&#45;right logout">Log out</div>-->
+            <!--</md-list-item>stu-->
+            <!--<hr>-->
+
+            <!--<div class="notification-title">-->
+                <!--Notifications-->
+            <!--</div>-->
+            <!--<div class="notification">-->
+                <!--<div class="notification-block">-->
+                    <!--<ng-md-icon class="clear" icon="clear"></ng-md-icon>-->
+                    <!--Notifications card-->
+                <!--</div>-->
+                <!--<div class="notification-block">-->
+                    <!--<ng-md-icon class="clear" icon="clear"></ng-md-icon>-->
+                    <!--Notifications card-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</md-content>-->
+    <!--</md-sidenav>-->
 </div>

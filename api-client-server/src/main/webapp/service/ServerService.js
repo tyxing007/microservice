@@ -16,56 +16,52 @@ app
 
         var server = {
             //User section
-            usersGET: '/erp/api/users',
-            userGET: '/erp/api/user/{0}',
-            userCreatePOST: '/erp/api/user/create',
-            sentTokenToEmailPOST: '/erp/api/token/send',
-            checkUserByToken: '/erp/api/user/{0}/check/{1}',
-            bindUserWithDepartmentGET: '/erp/api/user/{0}/bind/{1}',
-			sentToEmailTokenPOST: '/erp/api/token/send',
-            authPOST: '/uaa/api/auth',
+            usersGET: '/api/users',
+            userGET: '/api/user/{0}',
+            userCreatePOST: '/api/user/create',
+            sentTokenToEmailPOST: '/api/token/send',
+            checkUserByToken: '/api/user/{0}}/check/{1}',
+            bindUserWithDepartmentGET: '/api/user/{0}/bind/{1}',
+			sentToEmailTokenPOST: '/api/sentToEmailToken',
 
             //Department section
-            departmentsGET: '/erp/api/departments',
-            departmentGET: '/erp/api/department/{0}',
-            departmentCreatePOST: '/erp/api/department/create',
-            bindDepartmentWithUser: '/erp/api/department/{0}/bind/{1}',
+            departmentsGET: '/api/departments',
+            departmentGET: '/api/department/{0}',
+            departmentCreatePOST: '/api/department/create',
+            bindDepartmentWithUser: '/api/department/{0}/bind/{1}',
 
             //Image section
-            uploadImagePOST: '/erp/api/image/upload/user/',
-            deleteImageDELETE: '/erp/api/image/delete/user/',
+            uploadImagePOST: '/api/image/upload/user/',
+            deleteImageDELETE: '/api/image/delete/user/',
 
             //Vacancy section
-            vacanciesGET: '/erp/api/vacancies',
-			createVacancyPOST: '/erp/api/vacancy/create',
-
-            //Step section
-            stepPOST: '/erp/api/step',
+            vacanciesGET: '/api/vacancies',
+			createVacancyPOST: '/api/vacancy/create',
 
             //Task section
-            tasksGET: '/erp/api/task',
-            taskPOST: '/erp/api/task',
-            taskPUT: '/erp/api/task',
-            taskByIdGET: '/erp/api/task/{0}',
-            taskDELETE: '/erp/api/task/{0}',
+            tasksGET: '/api/task',
+            taskPOST: '/api/task',
+            taskPUT: '/api/task',
+            taskByIdGET: '/api/task/{0}',
+            taskDELETE: '/api/task/{0}',
 
-            statusesGET: '/erp/api/task/status',
-            statusPOST: '/erp/api/task/status/{0}',
+            statusesGET: '/api/task/status',
+            statusPOST: '/api/task/status/{0}',
 
-            labelsGET: '/erp/api/task/label',
-            labelPOST: '/erp/api/task/label/{0}',
+            labelsGET: '/api/task/label',
+            labelPOST: '/api/task/label/{0}',
 
-            prioritiesGET: '/erp/api/task/priority',
-            priorityPOST: '/erp/api/task/priority/{0}',
+            prioritiesGET: '/api/task/priority',
+            priorityPOST: '/api/task/priority/{0}',
 
             //Project section
-            projectsGET: "/erp/api/project",
-            projectPOST: "/erp/api/project",
-            projectByIdGET: "/erp/api/project/{0}",
+            projectsGET: "/api/project",
+            projectPOST: "/api/project",
+            projectByIdGET: "/api/project/{0}",
 
             //Bridging section
-            skillsGET: '/erp/api/skills',
-            autocompleteDataFromServerGET: '/erp/api/autocomplete/'
+            skillsGET: '/api/skills',
+            autocompleteDataFromServerGET: '/api/autocomplete/'
         };
 
         $rootScope.autocomplete = {
@@ -73,11 +69,6 @@ app
         };
 
         return {
-            login: function (credential) {
-                return $http.post(server.authPOST, credential).then(function (data) {
-                    return data;
-                });
-            },
 
             getUsers: function() {
                 var deferred = $q.defer();
@@ -98,7 +89,7 @@ app
 
             uploadImage: function (file, userId) {
                 if (file != null) {
-                  return Upload.upload({
+                    Upload.upload({
                         url: server.uploadImagePOST + userId,
                         data: {
                             file: file
@@ -108,15 +99,19 @@ app
             },
 
             deleteImage: function (userId) {
-               return $http.delete(server.deleteImageDELETE + userId)
+                $http.delete(server.deleteImageDELETE + userId)
             },
 
             createUser: function (user) {
                 return $http.post(server.userCreatePOST, user);
             },
 
-            sendToEmail: function (email, type) {
-                return $http.post(server.sentToEmailTokenPOST, {email: email, type:type});
+            sendToEmail: function (email, type, candidate) {
+                if(!candidate){
+                    return $http.post(server.sentToEmailTokenPOST, {email: email, type:type});
+                } else {
+                    return $http.post(server.sentToEmailTokenPOST, {email: email, type:type});
+                }
             },
 
             getAutocompleteDataFromServer: function(itemName) {
@@ -168,16 +163,21 @@ app
                 return deferred.promise;
             },
 
+
+            getTasks: function() {
+                var deferred = $q.defer();
+                $http.get(server.tasksGET).then(function (response) {
+                    deferred.resolve(response.data)
+                });
+                return deferred.promise;
+            },
+
             getPriorities: function(){
                 var deferred = $q.defer();
                 $http.get(server.prioritiesGET).then(function(response){
                     deferred.resolve(response.data);
                 });
                 return deferred.promise;
-            },
-
-            createStep: function (step) {
-                return $http.post(server.stepPOST, step);
-            },
+            }
     }
     });
